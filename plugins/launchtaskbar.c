@@ -1121,12 +1121,16 @@ static GtkWidget *_launchtaskbar_constructor(LXPanel *panel, config_setting_t *s
                                    special_cases_filepath,
                                    G_KEY_FILE_KEEP_COMMENTS, NULL))
     {
-        launchtaskbar_constructor_add_default_special_case(ltbp, "synaptic", "synaptic-pkexec");
-        launchtaskbar_constructor_add_default_special_case(ltbp, "soffice.bin", "libreoffice");
-        launchtaskbar_constructor_add_default_special_case(ltbp, "x-terminal-emulator", "lxterminal");
-        gchar *key_file_data = g_key_file_to_data(ltbp->p_key_file_special_cases, NULL, NULL);
-        g_file_set_contents(special_cases_filepath, key_file_data, -1, NULL);
-        g_free(key_file_data);
+        // try the global location...
+        if (!g_key_file_load_from_file(ltbp->p_key_file_special_cases, "/etc/xdg/lxpanel/launchtaskbar.cfg", G_KEY_FILE_KEEP_COMMENTS, NULL))
+        {
+            launchtaskbar_constructor_add_default_special_case(ltbp, "synaptic", "synaptic-pkexec");
+            launchtaskbar_constructor_add_default_special_case(ltbp, "soffice.bin", "libreoffice");
+            launchtaskbar_constructor_add_default_special_case(ltbp, "x-terminal-emulator", "lxterminal");
+            gchar *key_file_data = g_key_file_to_data(ltbp->p_key_file_special_cases, NULL, NULL);
+            g_file_set_contents(special_cases_filepath, key_file_data, -1, NULL);
+            g_free(key_file_data);
+        }
     }
     g_free(special_cases_filepath);
 
@@ -1141,7 +1145,7 @@ static GtkWidget *_launchtaskbar_constructor(LXPanel *panel, config_setting_t *s
     gtk_box_pack_start(GTK_BOX(p), ltbp->lb_icon_grid, FALSE, TRUE, 0);
 
     /* Setup override on GtkBox bug */
-    g_signal_connect(p, "size-allocate", G_CALLBACK(on_size_allocation), ltbp);
+    //g_signal_connect(p, "size-allocate", G_CALLBACK(on_size_allocation), ltbp);
 
     /* Read parameters from the configuration file. */
     config_setting_lookup_int(settings, "LaunchTaskBarMode", &ltbp->mode);
@@ -1848,10 +1852,18 @@ static void launchtaskbar_panel_configuration_changed(LXPanel *panel, GtkWidget 
     int height = panel_get_height(panel);
 
     if (ltbp->lb_built)
+    {
+        GList *l;
+        for (l = gtk_container_get_children(GTK_CONTAINER(ltbp->lb_icon_grid)); l != NULL; l = l->next)
+        {
+            LaunchButton *btn = (LaunchButton *) l->data;
+            launch_button_update_icon (btn, new_icon_size - ICON_BUTTON_TRIM);
+        }
         panel_icon_grid_set_geometry(PANEL_ICON_GRID(ltbp->lb_icon_grid),
                                      panel_get_orientation(panel),
                                      new_icon_size, new_icon_size,
                                      3, 0, height);
+    }
 
     /* Redraw all the labels.  Icon size or font color may have changed. */
     if (ltbp->tb_built)
@@ -1887,6 +1899,19 @@ static gboolean launchtaskbar_control(GtkWidget *p, const char *cmd)
             }
             else
                 config_setting_destroy(s);
+        }
+    }
+    if (ltbp->mode == TASKBAR)
+    {
+        if (strncmp(cmd, "mtw", 3) == 0)
+        {
+            int val;
+            if (sscanf (cmd, "mtw%d", &val) == 1 && val > 0 && val < 500)
+            {
+                ltbp->task_width_max = val;
+                taskbar_redraw (ltbp);
+                return TRUE;
+            }
         }
     }
     return FALSE;

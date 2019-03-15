@@ -1246,6 +1246,9 @@ static gboolean task_button_button_press_event(GtkWidget *widget, GdkEventButton
     GtkWidget *menu, *mi;
     TaskButton *tb = PANEL_TASK_BUTTON(widget);
 
+#ifdef ENABLE_NLS
+    textdomain ( GETTEXT_PACKAGE );
+#endif
     if (event->button == 3) /* Right click */
     {
         if (tb->n_visible > 1)
@@ -1691,7 +1694,7 @@ gboolean task_button_window_focus_changed(TaskButton *button, Window *win)
         if (!button->flags.flat_button)
             gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(button), TRUE);
         /* if focus changed that means button widgets may need update */
-        task_update_icon(button, button->last_focused, a_NET_ACTIVE_WINDOW);
+        task_update_icon(button, button->last_focused, None);
         task_redraw_label(button);
         // FIXME: test if need to update menu
     }

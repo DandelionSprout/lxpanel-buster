@@ -1042,12 +1042,13 @@ void fb_button_set_from_file(GtkWidget * btn, const char * img_file, gint width,
     lxpanel_button_set_icon(btn, img_file, height);
 }
 
+#define ICON_BUTTON_TRIM 4
 static void _gtk_image_set_from_file_scaled(GtkWidget * img, ImgData * data)
 {
     gint size = data->size;
 
     if (size < 0 && data->panel)
-        size = data->panel->priv->icon_size;
+        size = data->panel->priv->icon_size - ICON_BUTTON_TRIM;
 
     if (data->pixbuf != NULL)
     {
@@ -1280,6 +1281,7 @@ static GtkWidget *_lxpanel_button_compose(GtkWidget *event_box, GtkWidget *image
 
     gtk_misc_set_padding(GTK_MISC(image), 0, 0);
     gtk_misc_set_alignment(GTK_MISC(image), 0.5, 0.5);
+#if 0
     if (highlight_color != 0 && data != NULL)
     {
         data->hicolor = highlight_color;
@@ -1287,6 +1289,7 @@ static GtkWidget *_lxpanel_button_compose(GtkWidget *event_box, GtkWidget *image
         g_signal_connect_swapped(G_OBJECT(event_box), "enter-notify-event", G_CALLBACK(fb_button_enter), image);
         g_signal_connect_swapped(G_OBJECT(event_box), "leave-notify-event", G_CALLBACK(fb_button_leave), image);
     }
+#endif
 
     if (label == NULL)
         gtk_container_add(GTK_CONTAINER(event_box), image);
@@ -1316,6 +1319,7 @@ static GtkWidget *_lxpanel_button_compose(GtkWidget *event_box, GtkWidget *image
         gtk_box_pack_end(GTK_BOX(inner), lbl, FALSE, FALSE, 0);
     }
 
+    gtk_button_set_relief (GTK_BUTTON (event_box), GTK_RELIEF_NONE);
     gtk_widget_show_all(event_box);
     return event_box;
 }

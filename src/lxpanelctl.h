@@ -33,7 +33,8 @@ typedef enum {
     LXPANEL_CMD_CONFIG,
     LXPANEL_CMD_RESTART,
     LXPANEL_CMD_EXIT,
-    LXPANEL_CMD_COMMAND
+    LXPANEL_CMD_COMMAND,
+    LXPANEL_CMD_REFRESH
 } PanelControlCommand;
 
 /* this enum was in private.h but it is used by LXPANEL_CMD_COMMAND now */

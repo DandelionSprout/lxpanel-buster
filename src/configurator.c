@@ -1479,10 +1479,34 @@ static void on_toggle_changed( GtkToggleButton* btn, gpointer user_data )
     notify_apply_config( GTK_WIDGET(btn) );
 }
 
+static void on_radio_changed( GtkRadioButton* btn, gpointer user_data )
+{
+    gboolean* val = (gboolean*)user_data;
+
+    GSList *group = gtk_radio_button_get_group (btn);
+    GtkRadioButton *tbtn;
+    int nbtn = 0, sbtn;
+    while (group)
+    {
+        tbtn = group->data;
+        group = group->next;
+        if (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON (tbtn))) sbtn = nbtn;
+        nbtn++;
+    }
+    *val = nbtn - sbtn - 1;
+    notify_apply_config( GTK_WIDGET(btn) );
+}
+
 static void on_file_chooser_btn_file_set(GtkFileChooser* btn, char** val)
 {
     g_free( *val );
     *val = gtk_file_chooser_get_filename(btn);
+    notify_apply_config( GTK_WIDGET(btn) );
+}
+
+static void on_color_button_set(GtkColorButton* btn, char** val)
+{
+    gtk_color_button_get_color (btn, (GdkColor *) val);
     notify_apply_config( GTK_WIDGET(btn) );
 }
 
@@ -1521,6 +1545,8 @@ static void on_plugin_destroy(GtkWidget *plugin, GtkDialog *dlg)
 /* Handler for "response" signal from standard configuration dialog. */
 static void generic_config_dlg_response(GtkWidget * dlg, int response, Panel * panel)
 {
+    if (response == GTK_RESPONSE_CLOSE)
+    {
     gpointer plugin = g_object_get_data(G_OBJECT(dlg), "generic-config-plugin");
     if (plugin)
         g_signal_handlers_disconnect_by_func(plugin, on_plugin_destroy, dlg);
@@ -1528,6 +1554,7 @@ static void generic_config_dlg_response(GtkWidget * dlg, int response, Panel * p
     panel->plugin_pref_dialog = NULL;
     gtk_widget_destroy(dlg);
     panel_config_save(panel);
+    }
 }
 
 void _panel_show_config_dialog(LXPanel *panel, GtkWidget *p, GtkWidget *dlg)
@@ -1545,10 +1572,6 @@ void _panel_show_config_dialog(LXPanel *panel, GtkWidget *p, GtkWidget *dlg)
     g_signal_connect(p, "destroy", G_CALLBACK(on_plugin_destroy), dlg);
     g_object_set_data(G_OBJECT(dlg), "generic-config-plugin", p);
 
-    /* adjust config dialog window position to be near plugin */
-    lxpanel_plugin_popup_set_position_helper(panel, p, dlg, &x, &y);
-    gtk_window_move(GTK_WINDOW(dlg), x, y);
-
     gtk_window_present(GTK_WINDOW(dlg));
 }
 
@@ -1559,7 +1582,7 @@ static GtkWidget *_lxpanel_generic_config_dlg(const char *title, Panel *p,
                                               const char *name, va_list args)
 {
     GtkWidget* dlg = gtk_dialog_new_with_buttons( title, NULL, 0,
-                                                  GTK_STOCK_CLOSE,
+                                                  GTK_STOCK_OK,
                                                   GTK_RESPONSE_CLOSE,
                                                   NULL );
     GtkBox *dlg_vbox = GTK_BOX(gtk_dialog_get_content_area(GTK_DIALOG(dlg)));
@@ -1572,11 +1595,14 @@ static GtkWidget *_lxpanel_generic_config_dlg(const char *title, Panel *p,
 
     gtk_box_set_spacing( dlg_vbox, 4 );
 
+    int rb_group = 0;
+    GtkWidget *lastbtn;
     while( name )
     {
         GtkWidget* entry = NULL;
         gpointer val = va_arg( args, gpointer );
         PluginConfType type = va_arg( args, PluginConfType );
+        if (rb_group && type != CONF_TYPE_RBUTTON) rb_group = 0;
         if (type != CONF_TYPE_TRIM && val == NULL)
             g_critical("NULL pointer for generic config dialog");
         else switch( type )
@@ -1624,10 +1650,36 @@ static GtkWidget *_lxpanel_generic_config_dlg(const char *title, Panel *p,
                 else
                     g_critical("value for CONF_TYPE_EXTERNAL is not a GtkWidget");
                 break;
+            case CONF_TYPE_COLOR:
+                {
+                entry = gtk_color_button_new();
+                gtk_color_button_set_color (GTK_COLOR_BUTTON (entry), val);
+                g_signal_connect (entry, "color-set", G_CALLBACK (on_color_button_set), val);
+                }
+                break;
+            case CONF_TYPE_RBUTTON:
+                if (!rb_group)
+                {
+                    entry = gtk_radio_button_new_with_label (NULL, name);
+                    g_signal_connect (entry, "toggled", G_CALLBACK(on_radio_changed), val);
+                    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (entry), * (int *) val == rb_group);
+                    gtk_radio_button_group (GTK_RADIO_BUTTON (entry));
+                    lastbtn = entry;
+                    rb_group++;
+                }
+                else
+                {
+                    entry = gtk_radio_button_new_with_label (gtk_radio_button_group (GTK_RADIO_BUTTON (lastbtn)), name);
+                    g_signal_connect (entry, "toggled", G_CALLBACK(on_radio_changed), val);
+                    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (entry), * (int *) val == rb_group);
+                    lastbtn = entry;
+                    rb_group++;
+                }
+                break;
         }
         if( entry )
         {
-            if(( type == CONF_TYPE_BOOL ) || ( type == CONF_TYPE_TRIM ))
+            if(( type == CONF_TYPE_BOOL ) || ( type == CONF_TYPE_TRIM ) || (type == CONF_TYPE_RBUTTON))
                 gtk_box_pack_start( dlg_vbox, entry, FALSE, FALSE, 2 );
             else
             {

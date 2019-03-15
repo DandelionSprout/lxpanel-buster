@@ -1418,7 +1418,7 @@ GtkMenu* lxpanel_get_plugin_menu( LXPanel* panel, GtkWidget* plugin, gboolean us
         init = PLUGIN_CLASS(plugin);
         /* create single item - plugin instance settings */
         img = gtk_image_new_from_stock( GTK_STOCK_PREFERENCES, GTK_ICON_SIZE_MENU );
-        tmp = g_strdup_printf(_("\"%s\" Settings"),
+        tmp = g_strdup_printf(_("%s Settings"),
                               g_dgettext(init->gettext_package, init->name));
         menu_item = gtk_image_menu_item_new_with_label( tmp );
         g_free( tmp );
@@ -1799,7 +1799,7 @@ void lxpanel_draw_label_text(LXPanel * p, GtkWidget * label, const char * text,
                            gboolean bold, float custom_size_factor,
                            gboolean custom_color)
 {
-    panel_draw_label_text(p->priv, label, text, bold, custom_size_factor, custom_color);
+    gtk_label_set_text (GTK_LABEL (label), text);
 }
 
 void lxpanel_draw_label_text_with_color(LXPanel * p, GtkWidget * label, const char * text,

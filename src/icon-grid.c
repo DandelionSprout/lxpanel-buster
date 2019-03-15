@@ -1195,6 +1195,7 @@ static void panel_icon_grid_class_init(PanelIconGridClass *klass)
 
 static void panel_icon_grid_init(PanelIconGrid *ig)
 {
+    gtk_widget_set_has_window(GTK_WIDGET(ig), FALSE);
     gtk_widget_set_redraw_on_allocate(GTK_WIDGET(ig), FALSE);
 
     ig->orientation = GTK_ORIENTATION_HORIZONTAL;

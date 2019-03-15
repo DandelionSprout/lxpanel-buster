@@ -234,6 +234,11 @@ static gboolean lxpanel_plugin_button_press_event(GtkWidget *plugin, GdkEventBut
     if (event->button == 3 && /* right button */
         (event->state & gtk_accelerator_get_default_mod_mask()) == 0) /* no key */
     {
+#ifdef ENABLE_NLS
+		// this message comes via the plugin, which will have switched to its own text domain, so 
+		// we need to switch back here...
+		textdomain ( GETTEXT_PACKAGE );
+#endif
         GtkMenu* popup = (GtkMenu*)lxpanel_get_plugin_menu(panel, plugin, FALSE);
         gtk_menu_popup(popup, NULL, NULL, NULL, NULL, event->button, event->time);
         return TRUE;

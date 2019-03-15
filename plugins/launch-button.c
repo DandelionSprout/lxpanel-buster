@@ -30,7 +30,7 @@
  * This structure is also used during the "add to launchtaskbar" dialog to hold menu items. */
 struct _LaunchButton
 {
-    GtkEventBox parent;
+    GtkButton parent;
     LXPanel * panel;                    /* Back pointer to panel (grandparent widget) */
     GtkWidget * plugin;                 /* Back pointer to the plugin */
     FmJob * job;                        /* Async job to retrieve file info */
@@ -63,6 +63,11 @@ static void launch_button_job_finished(FmJob *job, LaunchButton *self)
         g_warning("launchbar: desktop entry does not exist");
         return;
     }
+    if (g_desktop_app_info_new (fm_file_info_get_name (self->fi)) == NULL)
+    {
+        g_warning("launchbar: application in desktop entry is not valid");
+        return;
+    }
     image = lxpanel_image_new_for_fm_icon(self->panel, fm_file_info_get_icon(self->fi),
                                           -1, NULL);
     lxpanel_button_compose(GTK_WIDGET(self), image, NULL, NULL);
@@ -74,7 +79,7 @@ static void launch_button_job_finished(FmJob *job, LaunchButton *self)
  * Class implementation
  */
 
-G_DEFINE_TYPE(LaunchButton, launch_button, GTK_TYPE_EVENT_BOX)
+G_DEFINE_TYPE(LaunchButton, launch_button, GTK_TYPE_BUTTON)
 
 static void launch_button_dispose(GObject *object)
 {
@@ -114,6 +119,11 @@ static gboolean launch_button_release_event(GtkWidget *widget, GdkEventButton *e
     return FALSE;
 }
 
+static gboolean launch_button_press_event(GtkWidget *widget, GdkEventButton *event)
+{
+	return FALSE;
+}
+
 static void launch_button_init(LaunchButton *self)
 {
     gtk_container_set_border_width(GTK_CONTAINER(self), 0);
@@ -127,6 +137,7 @@ static void launch_button_class_init(LaunchButtonClass *klass)
 
     object_class->dispose = launch_button_dispose;
     widget_class->button_release_event = launch_button_release_event;
+    widget_class->button_press_event = launch_button_press_event;
 }
 
 
@@ -239,4 +250,9 @@ gboolean launch_button_wait_load(LaunchButton *btn)
         config_setting_destroy(btn->settings);
     gtk_widget_destroy(GTK_WIDGET(btn));
     return FALSE;
+}
+
+void launch_button_update_icon (LaunchButton *btn, int size)
+{
+    if (btn->fi) lxpanel_button_update_icon (GTK_WIDGET(btn), fm_file_info_get_icon(btn->fi), size);
 }

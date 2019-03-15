@@ -130,6 +130,112 @@ static void process_client_msg ( XClientMessageEvent* ev )
         case LXPANEL_CMD_EXIT:
             gtk_main_quit();
             break;
+        case LXPANEL_CMD_REFRESH:
+            {
+                LXPanel * p = ((all_panels != NULL) ? all_panels->data : NULL);
+                if (p != NULL)
+                {
+                    // at some point I may need to read some more parameters here, but this will do for now...
+                    char linebuf[256], posbuf[16];
+                    int val;
+
+                    // try to find a config file...
+                    FILE *fp;
+                    char *file;
+                    file = g_build_filename (g_get_user_config_dir(), "lxpanel", cprofile, "panels", p->priv->name, NULL);
+                    fp = fopen (file, "rb");
+                    g_free (file);
+                    if (!fp)
+                    {
+                        const gchar * const *dir = g_get_system_config_dirs();
+                        if (dir)
+                        {
+                            while (dir[0])
+                            {
+                                file = g_build_filename (dir[0], "lxpanel", cprofile, "panels", p->priv->name, NULL);
+                                fp = fopen (file, "rb");
+                                g_free (file);
+                                if (fp) break;
+                                dir++;
+                            }
+                        }
+                    }
+
+                    while (fp && !feof (fp))
+                    {
+                        if (fgets (linebuf, 256, fp))
+                        {
+                            if (sscanf (linebuf, "%*[ \t]iconsize=%d", &val) == 1)
+                            {
+                                p->priv->icon_size = val;
+                                p->priv->height = val;
+                                panel_set_panel_configuration_changed (p->priv);
+                            }
+                            if (sscanf (linebuf, "%*[ \t]edge=%s", posbuf) == 1)
+                            {
+                                if (!strcmp (posbuf, "bottom"))
+                                {
+                                    if (p->priv->edge != EDGE_BOTTOM)
+                                    {
+                                        p->priv->edge = EDGE_BOTTOM;
+                                        gtk_widget_queue_resize(GTK_WIDGET(p));
+                                    }
+                                }
+                                else
+                                {
+                                    if (p->priv->edge != EDGE_TOP)
+                                    {
+                                        p->priv->edge = EDGE_TOP;
+                                        gtk_widget_queue_resize(GTK_WIDGET(p));
+                                    }
+                                }
+                            }
+
+                            /*
+                             * This is a really unpleasant hack...
+                             * I need to be able to get the taskbar plugin to resize elements based
+                             * on an updated value in the global config file.
+                             * The taskbar plugin cannot see the name of the profile used to launch
+                             * lxpanel, so it cannot read the config file itself.
+                             * The panel does not have access to the local data structures of a plugin,
+                             * so it can't write the data directly to the plugin.
+                             * The messaging interface from panel to plugin does not support arguments to
+                             * commands.
+                             * So the only way I can see to do this is to create a single-word command which
+                             * incorporates the argument, and send that via the messaging interface.
+                             * It's nasty, but it works. I'm open to suggestions for a better (more generic)
+                             * way of doing this - ideally it should be possible to get every plugin to
+                             * update from the config file simultaneously, but after banging my head on the
+                             * keyboard for a day, I can't see a simple and efficient way to do that...
+                             */
+                            if (sscanf (linebuf, "%*[ \t]MaxTaskWidth=%d", &val) == 1)
+                            {
+                                GList *plugins, *pl;
+                                const LXPanelPluginInit *init;
+                                char buf[10];
+
+                                init = g_hash_table_lookup (lxpanel_get_all_types (), "taskbar");
+                                if (init && init->control)
+                                {
+                                    plugins = gtk_container_get_children (GTK_CONTAINER(p->priv->box));
+                                    for (pl = plugins; pl; pl = pl->next)
+                                    {
+                                        if (init == PLUGIN_CLASS(pl->data))
+                                        {
+                                            sprintf (buf, "mtw%d\n", val);
+                                            init->control (pl->data, buf);
+                                            break;
+                                        }
+                                    }
+                                    g_list_free (plugins);
+                                }
+                            }
+                        }
+                    }
+                    if (fp) fclose (fp);
+                }
+            }
+            break;
         case LXPANEL_CMD_COMMAND:
             monitor = (ev->data.b[1] & 0xf) - 1; /* 0 for no monitor */
             edge = (ev->data.b[1] >> 4) & 0x7;
@@ -410,7 +516,7 @@ static void _start_panels_from_dir(const char *panel_dir)
     while((name = g_dir_read_name(dir)) != NULL)
     {
         char* panel_config = g_build_filename( panel_dir, name, NULL );
-        if (strchr(panel_config, '~') == NULL)    /* Skip editor backup files in case user has hand edited in this directory */
+        if (strchr(panel_config, '~') == NULL && name[0] != '.')    /* Skip editor backup files in case user has hand edited in this directory */
         {
             LXPanel* panel = panel_new( panel_config, name );
             if( panel )
