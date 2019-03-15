@@ -24,6 +24,7 @@
 #include "misc.h"
 
 #include <string.h>
+#include <gio/gdesktopappinfo.h>
 
 /* Representative of one launch button.
  * Note that the launch parameters come from the specified desktop file, or from the configuration file.
