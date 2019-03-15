@@ -1,0 +1,22 @@
+Author: Andriy Grytsenko <andrej@rep.kiev.ua>
+Description: fix battery alarm when measurement of current is missing.
+
+--- a/plugins/batt/batt.c
++++ b/plugins/batt/batt.c
+@@ -111,6 +111,7 @@
+     sem_wait(a->lock);
+     if (system(a->command) != 0)
+         g_warning("plugin batt: failed to execute alarm command \"%s\"", a->command);
++    sleep(51); /* do not spam messages more often than once a minute */
+     sem_post(a->lock);
+ 
+     g_free(a);
+@@ -257,7 +258,7 @@
+         isCharging = battery_is_charging ( b );
+ 
+     /* Consider running the alarm command */
+-    if ( !isCharging && rate > 0 &&
++    if ( !isCharging &&
+         ( ( battery_get_remaining( b ) / 60 ) < (int)lx_b->alarmTime ) )
+     {
+         /* FIXME: this should be done using glibs process functions */
