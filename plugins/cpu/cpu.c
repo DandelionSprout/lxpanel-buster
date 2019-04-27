@@ -330,6 +330,7 @@ static GtkWidget *cpu_constructor(LXPanel *panel, config_setting_t *settings)
 
     /* Show the widget.  Connect a timer to refresh the statistics. */
     gtk_widget_show(c->da);
+    cpu_configuration_changed (panel,p);
     c->timer = g_timeout_add(1500, (GSourceFunc) cpu_update, (gpointer) c);
     return p;
 }
