@@ -204,7 +204,6 @@ static gboolean task_is_visible(TaskButton *b, TaskDetails *task)
     /* Not on same monitor */
     if (b->flags.same_monitor_only && b->monitor != task->monitor && b->monitor >= 0)
         return FALSE;
-
     /* Desktop placement. */
     return ((task->desktop == ALL_WORKSPACES) ||
             (task->desktop == b->desktop) ||
@@ -1190,8 +1189,8 @@ static gboolean task_update_visibility(TaskButton *task)
         details->visible = task_is_visible(task, details);
         if (!details->visible)
             continue;
-        if (details->monitor == task->monitor && !details->iconified)
-            /* window is visible on the current desktop */
+        if (!details->iconified)
+            /* window is visible */
             task->visible = TRUE;
         /* Compute the visible name.  If all visible windows have the same title, use that.
          * Otherwise, use the class name.  This follows WNCK. */
