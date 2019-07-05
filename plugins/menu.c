@@ -161,6 +161,8 @@ static void
 menu_pos(GtkMenu *menu, gint *x, gint *y, gboolean *push_in, GtkWidget *widget)
 {
     menup *m = lxpanel_plugin_get_data(widget);
+    int mon = panel_get_monitor (m->panel);
+    gtk_menu_set_monitor (menu, mon == -1 ? 0 : mon);
     lxpanel_plugin_popup_set_position_helper(m->panel, widget, GTK_WIDGET(menu), x, y);
     *push_in = TRUE;
 }
