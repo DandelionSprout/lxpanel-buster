@@ -190,6 +190,11 @@ static void process_client_msg ( XClientMessageEvent* ev )
                                     }
                                 }
                             }
+                            if (sscanf (linebuf, "%*[ \t]monitor=%d", &val) == 1)
+                            {
+                                p->priv->monitor = val;
+                                panel_set_panel_configuration_changed (p->priv);
+                            }
 
                             /*
                              * This is a really unpleasant hack...
