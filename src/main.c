@@ -508,7 +508,7 @@ out:
 }
 #undef CLIPBOARD_NAME
 
-static void _start_panels_from_dir(const char *panel_dir)
+static void _start_panels_from_dir(const char *panel_dir, int fallback)
 {
     GDir* dir = g_dir_open( panel_dir, 0, NULL );
     const gchar* name;
@@ -523,7 +523,7 @@ static void _start_panels_from_dir(const char *panel_dir)
         char* panel_config = g_build_filename( panel_dir, name, NULL );
         if (strchr(panel_config, '~') == NULL && name[0] != '.')    /* Skip editor backup files in case user has hand edited in this directory */
         {
-            LXPanel* panel = panel_new( panel_config, name );
+            LXPanel* panel = fallback ? panel_new_mon_fb (panel_config, name) : panel_new (panel_config, name);
             if( panel )
                 all_panels = g_slist_prepend( all_panels, panel );
         }
@@ -539,7 +539,14 @@ static gboolean start_all_panels( )
 
     /* try user panels */
     panel_dir = _user_config_file_name("panels", NULL);
-    _start_panels_from_dir(panel_dir);
+
+    /* check to see if there are any panels which will display on monitor 0 */
+    char *cmd = g_strdup_printf ("grep -l Global $(grep -L monitor=[1-9] %s/*) /dev/null | grep -c . | grep -q 0", panel_dir);
+    int res = system (cmd);
+    g_free (cmd);
+    /* if res == 0 here, then there are no panels defined which will display on monitor 0 */
+
+    _start_panels_from_dir(panel_dir, res == 0 ? 1 : 0);
     g_free(panel_dir);
     if (all_panels != NULL)
         return TRUE;
@@ -548,7 +555,7 @@ static gboolean start_all_panels( )
     if (dir) while (dir[0])
     {
         panel_dir = _system_config_file_name(dir[0], "panels");
-        _start_panels_from_dir(panel_dir);
+        _start_panels_from_dir(panel_dir, 0);
         g_free(panel_dir);
         if (all_panels != NULL)
             return TRUE;
@@ -556,7 +563,7 @@ static gboolean start_all_panels( )
     }
     /* last try at old fallback for compatibility reasons */
     panel_dir = _old_system_config_file_name("panels");
-    _start_panels_from_dir(panel_dir);
+    _start_panels_from_dir(panel_dir, 0);
     g_free(panel_dir);
     return all_panels != NULL;
 }

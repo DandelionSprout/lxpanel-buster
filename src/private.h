@@ -248,6 +248,7 @@ extern GQuark lxpanel_plugin_qconf; /* access to congig_setting_t data */
 gboolean _class_is_present(const LXPanelPluginInit *init);
 
 LXPanel* panel_new(const char* config_file, const char* config_name);
+LXPanel* panel_new_mon_fb (const char* config_file, const char* config_name);
 
 void _panel_show_config_dialog(LXPanel *panel, GtkWidget *p, GtkWidget *dlg);
 

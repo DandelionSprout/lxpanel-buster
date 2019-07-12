@@ -2040,6 +2040,52 @@ LXPanel* panel_new( const char* config_file, const char* config_name )
     return panel;
 }
 
+/* This is a modified version of panel_new; the sole difference is that if
+ * there is only one monitor connected, it shows all panels which would
+ * normally be displayed on monitor 1 on monitor 0 instead. */
+
+LXPanel* panel_new_mon_fb (const char* config_file, const char* config_name)
+{
+    LXPanel* panel = NULL;
+
+    if (G_LIKELY(config_file))
+    {
+        panel = panel_allocate (gdk_screen_get_default ());
+        panel->priv->name = g_strdup (config_name);
+        g_debug ("starting panel from file %s", config_file);
+        if (!config_read_file (panel->priv->config, config_file))
+        {
+            g_warning ( "lxpanel: can't start panel");
+            gtk_widget_destroy (GTK_WIDGET(panel));
+            return NULL;
+        }
+
+        GdkScreen *screen = gtk_widget_get_screen (GTK_WIDGET (panel));
+
+        /* parse global section of config file */
+        config_setting_t *list = config_setting_get_member (config_root_setting (panel->priv->config), "");
+        if (!list || !panel_parse_global (panel->priv, config_setting_get_elem (list, 0)))
+        {
+            g_warning ( "lxpanel: can't start panel");
+            gtk_widget_destroy (GTK_WIDGET(panel));
+            return NULL;
+        }
+
+        int n_mons = gdk_screen_get_n_monitors (screen);
+        if (panel->priv->monitor < n_mons)
+            panel_start_gui (panel, list);
+        else if (n_mons == 1 && panel->priv->monitor == 1)
+        {
+            g_debug ("moving monitor 1 panel to monitor 0");
+            panel->priv->monitor = 0;
+            panel_start_gui (panel, list);
+        }
+
+        if (monitors_handler == 0)
+            monitors_handler = g_signal_connect (screen, "monitors-changed", G_CALLBACK (on_monitors_changed), NULL);
+    }
+    return panel;
+}
 
 GtkOrientation panel_get_orientation(LXPanel *panel)
 {
