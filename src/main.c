@@ -241,6 +241,19 @@ static void process_client_msg ( XClientMessageEvent* ev )
                 }
             }
             break;
+        case LXPANEL_CMD_MOVE:
+            {
+                LXPanel * p = ((all_panels != NULL) ? all_panels->data : NULL);
+                if (p != NULL)
+                {
+                    GdkScreen *screen = gtk_widget_get_screen (GTK_WIDGET (p));
+                    int ppm = p->priv->monitor;
+                    if (p->priv->monitor < gdk_screen_get_n_monitors (screen) - 1) p->priv->monitor++;
+                    else p->priv->monitor = 0;
+                    if (p->priv->monitor != ppm) panel_set_panel_configuration_changed (p->priv);
+                }
+            }
+            break;
         case LXPANEL_CMD_COMMAND:
             monitor = (ev->data.b[1] & 0xf) - 1; /* 0 for no monitor */
             edge = (ev->data.b[1] >> 4) & 0x7;
