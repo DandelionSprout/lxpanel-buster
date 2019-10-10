@@ -851,6 +851,7 @@ calculate_width(int scrw, int pw, int wtype, int align, int margin,
     RET();
 }
 
+extern int gdk_mon_num (int index);
 
 void _calculate_position(LXPanel *panel, GdkRectangle *rect)
 {
@@ -868,7 +869,7 @@ void _calculate_position(LXPanel *panel, GdkRectangle *rect)
         marea.height = gdk_screen_get_height(screen);
     }
     else if (np->monitor < gdk_screen_get_n_monitors(screen))
-        gdk_screen_get_monitor_geometry(screen,np->monitor,&marea);
+        gdk_screen_get_monitor_geometry(screen,gdk_mon_num (np->monitor),&marea);
     else
     {
         marea.x = 0;

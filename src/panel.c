@@ -86,6 +86,69 @@ enum
 
 static guint signals[N_SIGNALS];
 
+/* Monitor number remapping
+ * ========================
+ *
+ * There are two monitor numbering systems used in the code.
+ *
+ * The first is the numbering used by GDK. In this, monitors are numbered
+ * as they appear from left to right within the current GdkDisplay and
+ * GdkScreen. If xrandr or similar is used to rearrange the monitors, these
+ * numbers change.
+ *
+ * The second system is that used by X, and tools like xrandr. In this,
+ * the primary monitor is always 0, with non-primary monitors numbered from
+ * 1 upwards.
+ *
+ * xrandr --listmonitors lists monitors with their X reference number
+ * (with the primary monitor always as 0) - at the end of each line of the
+ * results of this command, the x and y offsets within the screen are shown
+ * for each monitor, so it is possible to cross-reference the two systems.
+ *
+ * Within lxpanel and pcmanfm, whenever a monitor number is given in the data
+ * file or data structure, it is an X reference number - 0 is always the
+ * primary monitor. (Otherwise, rearranging monitors makes these references
+ * change, and desktop, panel etc change when rearranging. Which is bad...)
+ *
+ * Whenever a GDK screen function is called on an internal monitor reference,
+ * the gdk_mon_num function must be used to wrap the internal reference before
+ * passing it to GDK.
+ *
+ * Note that identical functions are used in lxpanel and pcmanfm.
+ */
+
+int gdk_mon_num (int x_mon_num)
+{
+    GdkDisplay *disp = gdk_display_get_default ();
+    GdkScreen *scr = gdk_display_get_screen (disp, 0);
+    int prim = gdk_screen_get_primary_monitor (scr);
+
+    /* monitor 0 is always the primary monitor */
+    if (x_mon_num == 0) return prim;
+
+    /* this will currently only return the secondary monitor, if there is one */
+    /* for some future world, this needs to compare co-ords against those from xrandr */
+    for (int i = 0; i < gdk_screen_get_n_monitors (scr); i++)
+    {
+        if (i != prim) return i;
+    }
+
+    /* ... or -1 if there is only one monitor */
+    return -1;
+}
+
+int x_mon_num (int gdk_mon_num)
+{
+    GdkDisplay *disp = gdk_display_get_default ();
+    GdkScreen *scr = gdk_display_get_screen (disp, 0);
+    int prim = gdk_screen_get_primary_monitor (scr);
+
+    if (gdk_mon_num == prim) return 0;
+
+    if (gdk_screen_get_n_monitors (scr) > 1) return 1;
+    else return -1;
+}
+
 G_DEFINE_TYPE(PanelToplevel, lxpanel, GTK_TYPE_WINDOW);
 
 static void lxpanel_finalize(GObject *object)
@@ -566,7 +629,7 @@ gboolean _panel_edge_can_strut(LXPanel *panel, int edge, gint monitor, gulong *s
     n = gdk_screen_get_n_monitors(screen);
     if (monitor >= n) /* hidden now */
         return FALSE;
-    gdk_screen_get_monitor_geometry(screen, monitor, &rect);
+    gdk_screen_get_monitor_geometry(screen, gdk_mon_num (monitor), &rect);
     switch (edge)
     {
         case EDGE_LEFT:
@@ -598,7 +661,7 @@ gboolean _panel_edge_can_strut(LXPanel *panel, int edge, gint monitor, gulong *s
         {
             if (i == monitor)
                 continue;
-            gdk_screen_get_monitor_geometry(screen, i, &rect2);
+            gdk_screen_get_monitor_geometry(screen, gdk_mon_num (i), &rect2);
             if (gdk_rectangle_intersect(&rect, &rect2, NULL))
                 /* that monitor lies over the edge */
                 return FALSE;
@@ -1262,7 +1325,7 @@ static void panel_popupmenu_create_panel( GtkMenuItem* item, LXPanel* panel )
         /* panel is spanned over the screen, guess from pointer now */
         gint x, y;
         gdk_display_get_pointer(gdk_display_get_default(), NULL, &x, &y, NULL);
-        m = gdk_screen_get_monitor_at_point(screen, x, y);
+        m = x_mon_num (gdk_screen_get_monitor_at_point(screen, x, y));
     }
     for (e = 1; e < 5; ++e)
     {
@@ -2109,7 +2172,7 @@ Window panel_get_xwindow(LXPanel *panel)
 
 gint panel_get_monitor(LXPanel *panel)
 {
-    return panel->priv->monitor;
+    return gdk_mon_num (panel->priv->monitor);
 }
 
 GtkStyle *panel_get_defstyle(LXPanel *panel)
