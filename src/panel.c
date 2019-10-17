@@ -629,6 +629,14 @@ gboolean _panel_edge_can_strut(LXPanel *panel, int edge, gint monitor, gulong *s
     n = gdk_screen_get_n_monitors(screen);
     if (monitor >= n) /* hidden now */
         return FALSE;
+
+    /* the tests below are all based on the idea that a strut can only be attached to a monitor
+     * edge which is adjacent to a screen edge, and with size scaled to fill the entirety of the gap
+     * between screen and monitor. This restriction seems not to be required any more... */
+    if (G_LIKELY(size))
+        *size = s;
+    return TRUE;
+
     gdk_screen_get_monitor_geometry(screen, gdk_mon_num (monitor), &rect);
     switch (edge)
     {
