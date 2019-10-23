@@ -120,6 +120,7 @@ struct _Panel {
     guint transparent : 1;
     guint background : 1;
     guint spacing;
+    guint point_at_menu : 1;
 
     guint autohide : 1;
     guint visible : 1;

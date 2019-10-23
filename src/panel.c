@@ -149,6 +149,45 @@ int x_mon_num (int gdk_mon_num)
     else return -1;
 }
 
+void warp_pointer (Panel *p)
+{
+    if (p->point_at_menu && p->box != NULL)
+    {
+        // loop through all plugins to find the menu
+        GList *plugins = gtk_container_get_children (GTK_CONTAINER (p->box));
+        for (GList *l = plugins; l != NULL; l = l->next)
+        {
+            if (!g_strcmp0 ("Menu", PLUGIN_CLASS (l->data)->name))
+            {
+                int xpos, ypos;
+                GdkRectangle alloc;
+
+                // get the position of the menu window (the bar) and the menu button allocation
+                gdk_window_get_origin (gtk_widget_get_window (l->data), &xpos, &ypos);
+                gtk_widget_get_allocation (l->data, &alloc);
+
+                // calculate the centre of the menu button in screen coords
+                xpos += alloc.x + (alloc.width / 2);
+                ypos += alloc.y + (alloc.height / 2);
+
+                int x, y;
+                unsigned int w, h, d, b;
+                Window root;
+
+                // move the mouse pointer to the centre of the button
+                Display *xdisplay = XOpenDisplay (NULL);
+                XGetGeometry (xdisplay, DefaultRootWindow (xdisplay), &root, &x, &y, &w, &h, &b, &d);
+                XWarpPointer (xdisplay, 0, root, 0, 0, 0, 0, xpos, ypos);
+                XCloseDisplay (xdisplay);
+            }
+        }
+        g_list_free (plugins);
+    }
+
+    // clear the flag in RAM so we only do this once per run
+    p->point_at_menu = 0;
+}
+
 G_DEFINE_TYPE(PanelToplevel, lxpanel, GTK_TYPE_WINDOW);
 
 static void lxpanel_finalize(GObject *object)
@@ -538,6 +577,7 @@ static void lxpanel_init(PanelToplevel *self)
     p->icon_theme = gtk_icon_theme_get_default();
     p->config = config_new();
     p->defstyle = gtk_widget_get_default_style();
+    p->point_at_menu = 0;
 }
 
 /* Allocate and initialize new Panel structure. */
@@ -1954,6 +1994,8 @@ static gboolean _panel_idle_reconfigure(gpointer widget)
 
     p->reconfigure_queued = 0;
 
+    warp_pointer (p);
+
     return FALSE;
 }
 
@@ -2007,6 +2049,8 @@ panel_parse_global(Panel *p, config_setting_t *cfg)
     }
     if (config_setting_lookup_int(cfg, "autohide", &i))
         p->autohide = i != 0;
+    if (config_setting_lookup_int(cfg, "point_at_menu", &i))
+        p->point_at_menu = i != 0;
     if (config_setting_lookup_int(cfg, "heightwhenhidden", &i))
         p->height_when_hidden = MAX(0, i);
     if (config_setting_lookup_string(cfg, "tintcolor", &str))
