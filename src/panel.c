@@ -2212,6 +2212,15 @@ gint panel_get_icon_size(LXPanel *panel)
     return panel->priv->icon_size;
 }
 
+gint panel_get_safe_icon_size (LXPanel *panel)
+{
+    if (panel->priv->icon_size <= 20) return 16;
+    else if (panel->priv->icon_size <= 28) return 24;
+    else if (panel->priv->icon_size <= 40) return 32;
+    else if (panel->priv->icon_size <= 56) return 48;
+    else return 64;
+}
+
 gint panel_get_height(LXPanel *panel)
 {
     return panel->priv->height;

@@ -92,7 +92,6 @@ typedef struct {
 static guint idle_loader = 0;
 
 GQuark SYS_MENU_ITEM_ID = 0;
-#define ICON_BUTTON_TRIM 4
 
 /* FIXME: those are defined on panel main code */
 void restart(void);
@@ -678,26 +677,6 @@ static void show_system_menu(GtkWidget *p)
 	if (m->has_system_menu) show_menu( m->box, m, 0, GDK_CURRENT_TIME );
 }
 
-static void set_icon (LXPanel *p, GtkWidget *image, const char *icon)
-{
-    GdkPixbuf *pixbuf;
-
-    int size = panel_get_icon_size (p) - ICON_BUTTON_TRIM;
-    if (gtk_icon_theme_has_icon (panel_get_icon_theme (p), icon))
-    {
-        GtkIconInfo *info = gtk_icon_theme_lookup_icon (panel_get_icon_theme (p), icon, size, GTK_ICON_LOOKUP_FORCE_SIZE);
-        pixbuf = gtk_icon_info_load_icon (info, NULL);
-        gtk_icon_info_free (info);
-    }
-    else pixbuf = gdk_pixbuf_new_from_file_at_scale (icon, size, size, TRUE, NULL);
-
-    if (pixbuf != NULL)
-    {
-        gtk_image_set_from_pixbuf (GTK_IMAGE (image), pixbuf);
-        g_object_unref (pixbuf);
-    }
-}
-
 static GtkWidget *
 make_button(menup *m, const gchar *fname, const gchar *name, GdkColor* tint, GtkWidget *menu)
 {
@@ -728,7 +707,7 @@ make_button(menup *m, const gchar *fname, const gchar *name, GdkColor* tint, Gtk
     else
     {
         m->img = gtk_image_new ();
-        set_icon (m->panel, m->img, m->fname);
+        lxpanel_plugin_set_taskbar_icon (m->panel, m->img, m->fname);
     }
 
     gtk_widget_set_visible (m->img, TRUE);
@@ -962,17 +941,6 @@ error:
     RET(NULL);
 }
 
-int set_icon_size (LXPanel *panel)
-{
-    int s = panel_get_icon_size (panel);
-    if (s <= 12) return 8;
-    else if (s <= 20) return 16;
-    else if (s <= 28) return 24;
-    else if (s <= 40) return 32;
-    else if (s <= 56) return 48;
-    else return 64;
-}
-
 static GtkWidget *
 menu_constructor(LXPanel *panel, config_setting_t *settings)
 {
@@ -983,7 +951,7 @@ menu_constructor(LXPanel *panel, config_setting_t *settings)
     m = g_new0(menup, 1);
     g_return_val_if_fail(m != NULL, 0);
 
-    m->iconsize = set_icon_size (panel);
+    m->iconsize = panel_get_safe_icon_size (panel);
 
     m->box = gtk_button_new();
     gtk_button_set_relief (GTK_BUTTON (m->box), GTK_RELIEF_NONE);
@@ -1025,10 +993,10 @@ static gboolean apply_config(gpointer user_data)
     GtkWidget *p = user_data;
     menup* m = lxpanel_plugin_get_data(p);
 
-    m->iconsize = set_icon_size (m->panel);
+    m->iconsize = panel_get_safe_icon_size (m->panel);
 
     if( m->fname ) {
-        set_icon (m->panel, m->img, m->fname);
+        lxpanel_plugin_set_taskbar_icon (m->panel, m->img, m->fname);
     }
     config_group_set_string(m->settings, "image", m->fname);
     /* config_group_set_int(m->settings, "panelSize", m->match_panel); */

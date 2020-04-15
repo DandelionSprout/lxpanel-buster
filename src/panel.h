@@ -138,6 +138,7 @@ void lxpanel_config_save(LXPanel *p); /* defined in configurator.c */
 /* Accessors APIs for Panel* */
 extern GtkOrientation panel_get_orientation(LXPanel *panel);
 extern gint panel_get_icon_size(LXPanel *panel);
+extern gint panel_get_safe_icon_size(LXPanel *panel);
 extern gint panel_get_height(LXPanel *panel);
 extern Window panel_get_xwindow(LXPanel *panel);
 extern gint panel_get_monitor(LXPanel *panel);

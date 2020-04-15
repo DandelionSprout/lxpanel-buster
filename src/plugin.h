@@ -381,6 +381,9 @@ extern guint panel_config_click_parse(const char *keystring, GdkModifierType *mo
 GtkWidget *lxpanel_add_plugin(LXPanel *p, const char *name, config_setting_t *cfg, gint at);
 void lxpanel_remove_plugin(LXPanel *p, GtkWidget *plugin);
 
+extern void lxpanel_plugin_set_taskbar_icon (LXPanel *p, GtkWidget *image, const char *icon);
+extern void lxpanel_plugin_set_icon (LXPanel *p, GtkWidget *image, const char *icon, int size);
+
 G_END_DECLS
 
 #endif /* __PLUGIN_H__ */
