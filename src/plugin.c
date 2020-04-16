@@ -608,8 +608,6 @@ void lxpanel_plugin_set_taskbar_icon (LXPanel *p, GtkWidget *image, const char *
 {
     GdkPixbuf *pixbuf;
 
-    if (!icon) return;
-
     pixbuf = gtk_icon_theme_load_icon (panel_get_icon_theme (p), icon,
         panel_get_safe_icon_size (p), GTK_ICON_LOOKUP_FORCE_SIZE, NULL);
     if (pixbuf)
@@ -622,8 +620,6 @@ void lxpanel_plugin_set_taskbar_icon (LXPanel *p, GtkWidget *image, const char *
 void lxpanel_plugin_set_menu_icon (LXPanel *p, GtkWidget *image, const char *icon)
 {
     GdkPixbuf *pixbuf;
-
-    if (!icon) return;
 
     pixbuf = gtk_icon_theme_load_icon (panel_get_icon_theme (p), icon,
         panel_get_safe_icon_size (p) > 32 ? 24 : 16, GTK_ICON_LOOKUP_FORCE_SIZE, NULL);
