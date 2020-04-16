@@ -606,25 +606,27 @@ GHashTable *lxpanel_get_all_types(void)
 /* sets the supplied image widget to the named icon at the current taskbar size */
 void lxpanel_plugin_set_taskbar_icon (LXPanel *p, GtkWidget *image, const char *icon)
 {
-    GtkIconSize isz;
-    int size;
+    GdkPixbuf *pixbuf;
 
-    size = panel_get_safe_icon_size (p);
-    if (size >= 48) isz = GTK_ICON_SIZE_DIALOG;
-    else if (size >= 32) isz = GTK_ICON_SIZE_DND;
-    else if (size >= 24) isz = GTK_ICON_SIZE_LARGE_TOOLBAR;
-    else isz = GTK_ICON_SIZE_MENU;
+    if (!icon) return;
 
-    gtk_image_set_from_icon_name (GTK_IMAGE (image), icon, isz);
+    pixbuf = gtk_icon_theme_load_icon (panel_get_icon_theme (p), icon,
+        panel_get_safe_icon_size (p), GTK_ICON_LOOKUP_FORCE_SIZE, NULL);
+    if (pixbuf)
+    {
+        gtk_image_set_from_pixbuf (GTK_IMAGE (image), pixbuf);
+        g_object_unref (pixbuf);
+    }
 }
 
-
-void lxpanel_plugin_set_icon (LXPanel *p, GtkWidget *image, const char *icon, int size)
+void lxpanel_plugin_set_menu_icon (LXPanel *p, GtkWidget *image, const char *icon)
 {
     GdkPixbuf *pixbuf;
 
-    pixbuf = gtk_icon_theme_load_icon (panel_get_icon_theme (p), icon, size, GTK_ICON_LOOKUP_FORCE_SIZE, NULL);
+    if (!icon) return;
 
+    pixbuf = gtk_icon_theme_load_icon (panel_get_icon_theme (p), icon,
+        panel_get_safe_icon_size (p) > 32 ? 24 : 16, GTK_ICON_LOOKUP_FORCE_SIZE, NULL);
     if (pixbuf)
     {
         gtk_image_set_from_pixbuf (GTK_IMAGE (image), pixbuf);
