@@ -1043,12 +1043,13 @@ void fb_button_set_from_file(GtkWidget * btn, const char * img_file, gint width,
     lxpanel_button_set_icon(btn, img_file, height);
 }
 
+#define ICON_BUTTON_TRIM 4
 static void _gtk_image_set_from_file_scaled(GtkWidget * img, ImgData * data)
 {
     gint size = data->size;
 
     if (size < 0 && data->panel)
-        size = data->panel->priv->icon_size;
+        size = data->panel->priv->icon_size - ICON_BUTTON_TRIM;
 
     if (data->pixbuf != NULL)
     {
