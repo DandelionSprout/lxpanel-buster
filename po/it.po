@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: LxPanel\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-02-22 00:29+0200\n"
-"PO-Revision-Date: 2020-04-28 00:40+0200\n"
+"PO-Revision-Date: 2020-04-28 13:12+0200\n"
 "Last-Translator: Emanuele Goldoni <emanuele.goldoni@gmail.com>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Virtaal 0.7.1\n"
+"X-Generator: Poedit 2.2.4\n"
 
 #: ../src/configurator.c:148
 msgid ""
@@ -81,7 +81,8 @@ msgstr "Conferma"
 msgid "translator-credits"
 msgstr ""
 "Alessandro Pellizzari\n"
-"Daniele Forsi <daniele@forsi.it>"
+"Daniele Forsi <daniele@forsi.it>\n"
+"Emanuele Goldoni <emanuele.goldoni@gmail.com>"
 
 #: ../src/panel.c:1360
 msgid "LXPanel"
@@ -340,7 +341,7 @@ msgstr "Disabilita l'ingrandimento delle icone piccole dei task"
 
 #: ../data/ui/launchtaskbar.glade.h:15
 msgid "Show task icons smaller than rest of panel icons"
-msgstr ""
+msgstr "Mostra icone dei task più piccole rispetto alle altre del pannello"
 
 #: ../data/ui/launchtaskbar.glade.h:16
 msgid "Maximum width of task button"
@@ -1056,7 +1057,7 @@ msgstr "Altoparlante+LO"
 
 #: ../plugins/volumealsa/volumealsa.c:1352
 msgid "default"
-msgstr "Predefinito"
+msgstr "predefinito"
 
 #. desc, index
 #: ../plugins/volumealsa/volumealsa.c:1412
@@ -1910,7 +1911,7 @@ msgstr "_Metriche (°C)"
 #: ../plugins/weather/weatherwidget.c:1309
 #, fuzzy
 msgid "_English (°F)"
-msgstr "Ingl_esi (°F)"
+msgstr "Imp_eriali (°F)"
 
 #: ../plugins/weather/weatherwidget.c:1344
 msgid "Forecast"
@@ -2035,87 +2036,88 @@ msgstr "Mostra le condizioni meteo per una località."
 
 #: ../plugins/weather/yahooutil.c:51
 msgid "N"
-msgstr ""
+msgstr "N"
 
 #: ../plugins/weather/yahooutil.c:52
 msgid "NNE"
-msgstr ""
+msgstr "NNE"
 
 #: ../plugins/weather/yahooutil.c:53
 msgid "NE"
-msgstr ""
+msgstr "NE"
 
 #: ../plugins/weather/yahooutil.c:54
 msgid "ENE"
-msgstr ""
+msgstr "ENE"
 
 #: ../plugins/weather/yahooutil.c:55
 msgid "E"
-msgstr ""
+msgstr "E"
 
 #: ../plugins/weather/yahooutil.c:56
 msgid "ESE"
-msgstr ""
+msgstr "ESE"
 
 #: ../plugins/weather/yahooutil.c:57
 msgid "SE"
-msgstr ""
+msgstr "SE"
 
 #: ../plugins/weather/yahooutil.c:58
 msgid "SSE"
-msgstr ""
+msgstr "SSE"
 
 #: ../plugins/weather/yahooutil.c:59
 msgid "S"
-msgstr ""
+msgstr "S"
 
 #: ../plugins/weather/yahooutil.c:60
 msgid "SSW"
-msgstr ""
+msgstr "SSO"
 
 #: ../plugins/weather/yahooutil.c:61
 msgid "SW"
-msgstr ""
+msgstr "SO"
 
 #: ../plugins/weather/yahooutil.c:62
 msgid "WSW"
-msgstr ""
+msgstr "OSO"
 
 #: ../plugins/weather/yahooutil.c:63
 msgid "W"
-msgstr ""
+msgstr "O"
 
 #: ../plugins/weather/yahooutil.c:64
 msgid "WNW"
-msgstr ""
+msgstr "ONO"
 
 #: ../plugins/weather/yahooutil.c:65
 msgid "NW"
-msgstr ""
+msgstr "NO"
 
 #: ../plugins/weather/yahooutil.c:66
 msgid "NNW"
-msgstr ""
+msgstr "NNO"
 
 #: ../plugins/weather/yahooutil.c:1086
 msgid "Yahoo! Weather"
-msgstr ""
+msgstr "Yahoo! Meteo"
 
 #: ../plugins/weather/openweathermap.c:347
 msgid "Mph"
-msgstr ""
+msgstr "miglia/ora"
 
 #: ../plugins/weather/openweathermap.c:347
 msgid "m/s"
-msgstr ""
+msgstr "m/s"
 
+# visibility in meters
 #: ../plugins/weather/openweathermap.c:501
 msgid "m"
-msgstr ""
+msgstr "m"
 
 #: ../plugins/weather/openweathermap.c:916
 msgid "OpenWeatherMap"
-msgstr ""
+msgstr "OpenWeatherMap"
 
 #~ msgid " --log <number> -- set log level 0-5. 0 - none 5 - chatty\n"
 #~ msgstr ""
