@@ -3,7 +3,8 @@
 # Fabio Barone <phonky at gmx.net>, 2009.
 # Andrea Florio <andrea@opensuse.org>, 2010.
 # Daniele Forsi <daniele@forsi.it>, 2012, 2016.
-# kunturweb <kunturweb@altervista.org>, 2014
+# kunturweb <kunturweb@altervista.org>, 2014.
+# Emanuele Goldoni <emanuele.goldoni@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: LxPanel\n"
@@ -188,12 +189,12 @@ msgstr "Opzioni da riga di comando:\n"
 #: ../src/main.c:325
 #, c-format
 msgid " --help      -- print this help and exit\n"
-msgstr " --help         -- mostra questo aiuto e termina\n"
+msgstr " --help      -- mostra questo aiuto e termina\n"
 
 #: ../src/main.c:326
 #, c-format
 msgid " --version   -- print version and exit\n"
-msgstr " --version      -- mostra la versione e termina\n"
+msgstr " --version   -- mostra la versione e termina\n"
 
 #. g_print(_(" --log <number> -- set log level 0-5. 0 - none 5 - chatty\n"));
 #. g_print(_(" --configure -- launch configuration utility\n"));
