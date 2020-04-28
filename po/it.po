@@ -1,5 +1,4 @@
 # Translation of lxpanel to Italian
-# Copyright (C) 2009 Fabio Barone <phonky at gmx.net>
 # This file is distributed under the same license as the lxpanel package
 # Fabio Barone <phonky at gmx.net>, 2009.
 # Andrea Florio <andrea@opensuse.org>, 2010.
@@ -7,12 +6,12 @@
 # kunturweb <kunturweb@altervista.org>, 2014
 msgid ""
 msgstr ""
-"Project-Id-Version: lxpanel 0.3.99\n"
+"Project-Id-Version: LxPanel\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-02-22 00:29+0200\n"
-"PO-Revision-Date: 2016-10-26 00:40+0200\n"
-"Last-Translator: Daniele Forsi <daniele@forsi.it>\n"
-"Language-Team: <lxde-i18n@lists.sourceforge.net>\n"
+"PO-Revision-Date: 2020-04-28 00:40+0200\n"
+"Last-Translator: Emanuele Goldoni <emanuele.goldoni@gmail.com>\n"
+"Language-Team: Italian\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1904,10 +1903,12 @@ msgid "Units:"
 msgstr "Unità:"
 
 #: ../plugins/weather/weatherwidget.c:1307
+#, fuzzy
 msgid "_Metric (°C)"
 msgstr "_Metriche (°C)"
 
 #: ../plugins/weather/weatherwidget.c:1309
+#, fuzzy
 msgid "_English (°F)"
 msgstr "Ingl_esi (°F)"
 
@@ -2121,8 +2122,8 @@ msgstr ""
 #~ "  --log NUMERO   -- definisce il livello di log 0-5. 0 - nessuno, 5 - "
 #~ "completo\n"
 
-#~ msgid "Format codes: man 3 strftime; \\%n for line break"
-#~ msgstr "Codici formato: man 3 strftime; \\%n per ritorno a capo"
+#~ msgid "Display Image and Tooltip"
+#~ msgstr "Mostra immagine e suggerimento"
 
 #~ msgid "Normal"
 #~ msgstr "Normale"
@@ -2132,25 +2133,6 @@ msgstr ""
 
 #~ msgid "Warning2"
 #~ msgstr "Avvertimento2"
-
-#~ msgid "Warning1 Temperature"
-#~ msgstr "Temperatura avvertimento1"
-
-#~ msgid "Warning2 Temperature"
-#~ msgstr "Temperatura avvertimento2"
-
-#~ msgid "Copyright (C) 2008-2013"
-#~ msgstr "Copyright © 2008-2013"
-
-#~ msgid "Display Image and Tooltip"
-#~ msgstr "Mostra immagine e suggerimento"
-
-#~ msgid ""
-#~ "Error, you need to install an application to configure the sound "
-#~ "(pavucontol, alsamixer ...)"
-#~ msgstr ""
-#~ "Errore: è necessario installare un'applicazione per configurare il suono "
-#~ "(pavucontol, alsamixer, ...)"
 
 #~ msgid "Failed to launch time configuration tool: %s"
 #~ msgstr ""
@@ -2179,114 +2161,3 @@ msgstr ""
 
 #~ msgid "Default layout:"
 #~ msgstr "Layout predefinito:"
-
-#~ msgid "Available Applications"
-#~ msgstr "Applicazioni Disponibili"
-
-#~ msgid "Display system temperature, by kesler.daniel@gmail.com"
-#~ msgstr "Mostra temperatura di sistema, by kesler.daniel@gmail.com"
-
-#~ msgid "Left\t"
-#~ msgstr "Sinistra\t"
-
-#~ msgid "Top\t"
-#~ msgstr "Superiore\t"
-
-#~ msgid "Couldn't find pixmap file: %s"
-#~ msgstr "Impossibile trovare file pixmap: %s"
-
-#~ msgid "Desktop No / Workspace Name"
-#~ msgstr "Numero scrivania / area di lavoro"
-
-#~ msgid ""
-#~ "Allows you to switch the keyboard layout and\n"
-#~ "displays the currently selected layout."
-#~ msgstr ""
-#~ "Permette di cambiare il layout della tastiera\n"
-#~ "e mostra il layout attuale."
-
-#~ msgid "Other plugins available here"
-#~ msgstr "Altri plugin disponibili qui"
-
-#~ msgid "Old KDE/GNOME Tray"
-#~ msgstr "Pannello KDE/GNOME vecchio"
-
-#~ msgid "Enable Image:"
-#~ msgstr "Attiva immagine:"
-
-#~ msgid "Enable Transparency"
-#~ msgstr "Attiva trasparenza"
-
-#~ msgid " --configure -- launch configuration utility\n"
-#~ msgstr " --configure -- avvia il programma di configurazione\n"
-
-#~ msgid " -C  -- same as --configure\n"
-#~ msgstr " -C  -- analogo a --configure\n"
-
-#~ msgid "Add Button"
-#~ msgstr "Aggiungi bottone"
-
-#~ msgid "Button Properties"
-#~ msgstr "Proprietà bottone"
-
-#~ msgid "Remove Button"
-#~ msgstr "Eliminare bottone"
-
-#~ msgid "Buttons"
-#~ msgstr "Bottoni"
-
-#~ msgid "Accept SkipPager"
-#~ msgstr "Accetta SkipPager"
-
-#~ msgid "Show Iconified windows"
-#~ msgstr "Mostra finestre minimizzate"
-
-#~ msgid "Show mapped windows"
-#~ msgstr "Mostra finestre arrotolate"
-
-#~ msgid "Kayboard Layout switcher"
-#~ msgstr "Cambio Layout Tastiera"
-
-#~ msgid ""
-#~ "Dynamic\n"
-#~ "Pixels\n"
-#~ "% Percent"
-#~ msgstr ""
-#~ "Dinamico\n"
-#~ "Pixel\n"
-#~ "% Percento"
-
-#~ msgid ""
-#~ "Left\n"
-#~ "Center\n"
-#~ "Right"
-#~ msgstr ""
-#~ "Sinistra\n"
-#~ "Centro\n"
-#~ "Destra"
-
-#~ msgid ""
-#~ "Left\n"
-#~ "Right\n"
-#~ "Top\n"
-#~ "Bottom"
-#~ msgstr ""
-#~ "Sinistra\n"
-#~ "Destra\n"
-#~ "Sopra\n"
-#~ "Sotto"
-
-#~ msgid "Where to put the panel?"
-#~ msgstr "Dove devo piazzare il pannello?"
-
-#~ msgid "Battery: %d%% charged, %s"
-#~ msgstr "Batteria: %d%% caricata, %s"
-
-#~ msgid "charging finished"
-#~ msgstr "carica completata"
-
-#~ msgid "charging"
-#~ msgstr "in caricamento"
-
-#~ msgid "Add to desktop panel"
-#~ msgstr "Aggiungere al pannello scrivania"
