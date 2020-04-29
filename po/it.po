@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LxPanel\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-22 00:29+0200\n"
-"PO-Revision-Date: 2020-04-28 13:12+0200\n"
+"POT-Creation-Date: 2020-04-29 13:37+0200\n"
+"PO-Revision-Date: 2020-04-29 13:42+0200\n"
 "Last-Translator: Emanuele Goldoni <emanuele.goldoni@gmail.com>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -49,23 +49,23 @@ msgstr "Plugin disponibili"
 msgid "Logout command is not set"
 msgstr "Il comando di chiusura sessione non è impostato"
 
-#: ../src/configurator.c:1495
+#: ../src/configurator.c:1519
 msgid "Select a directory"
 msgstr "Scegliere una directory"
 
-#: ../src/configurator.c:1495 ../src/configurator.c:1607
+#: ../src/configurator.c:1519 ../src/configurator.c:1633
 msgid "Select a file"
 msgstr "Scegliere un file"
 
-#: ../src/configurator.c:1640
+#: ../src/configurator.c:1692
 msgid "_Browse"
 msgstr "_Sfoglia"
 
-#: ../src/panel.c:1292
+#: ../src/panel.c:1403
 msgid "There is no room for another panel. All the edges are taken."
 msgstr "Non c'è spazio per un altro pannello. Tutti i bordi sono occupati."
 
-#: ../src/panel.c:1318
+#: ../src/panel.c:1429
 msgid ""
 "Really delete this panel?\n"
 "<b>Warning: This can not be recovered.</b>"
@@ -73,94 +73,94 @@ msgstr ""
 "Eliminare davvero questo pannello?\n"
 "<b>Attenzione: non potrà essere recuperato</b>"
 
-#: ../src/panel.c:1320
+#: ../src/panel.c:1431
 msgid "Confirm"
 msgstr "Conferma"
 
 #. TRANSLATORS: Replace this string with your names, one name per line.
-#: ../src/panel.c:1355
+#: ../src/panel.c:1466
 msgid "translator-credits"
 msgstr ""
 "Alessandro Pellizzari\n"
 "Daniele Forsi <daniele@forsi.it>\n"
 "Emanuele Goldoni <emanuele.goldoni@gmail.com>"
 
-#: ../src/panel.c:1360
+#: ../src/panel.c:1471
 msgid "LXPanel"
 msgstr "LXPanel"
 
-#: ../src/panel.c:1378
+#: ../src/panel.c:1489
 msgid "Copyright (C) 2008-2019"
 msgstr "Copyright © 2008-2019"
 
-#: ../src/panel.c:1379
+#: ../src/panel.c:1490
 msgid "Desktop panel for LXDE project"
 msgstr "Pannello del desktop per il Progetto LXDE"
 
-#: ../src/panel.c:1421
-#, c-format
-msgid "\"%s\" Settings"
-msgstr "Impostazioni di «%s»"
+#: ../src/panel.c:1532
+#, fuzzy, c-format
+msgid "%s Settings"
+msgstr "Impostazioni di %s"
 
-#: ../src/panel.c:1442
+#: ../src/panel.c:1553
 msgid "Add / Remove Panel Items"
 msgstr "Aggiungi/Rimuovi elementi pannello"
 
-#: ../src/panel.c:1450
+#: ../src/panel.c:1561
 #, c-format
 msgid "Remove \"%s\" From Panel"
 msgstr "Elimina «%s» dal pannello"
 
-#: ../src/panel.c:1462
+#: ../src/panel.c:1573
 msgid "Panel Settings"
 msgstr "Impostazioni pannello"
 
-#: ../src/panel.c:1468
+#: ../src/panel.c:1579
 msgid "Create New Panel"
 msgstr "Crea nuovo pannello"
 
-#: ../src/panel.c:1474
+#: ../src/panel.c:1585
 msgid "Delete This Panel"
 msgstr "Elimina questo pannello"
 
-#: ../src/panel.c:1485
+#: ../src/panel.c:1596
 msgid "About"
 msgstr "Informazioni"
 
-#: ../src/panel.c:1492
+#: ../src/panel.c:1603
 msgid "Panel"
 msgstr "Pannello"
 
-#: ../src/panel.c:1708 ../src/panel.c:1716 ../data/ui/panel-pref.glade.h:22
+#: ../src/panel.c:1821 ../src/panel.c:1829 ../data/ui/panel-pref.glade.h:22
 msgid "Height:"
 msgstr "Altezza:"
 
-#: ../src/panel.c:1709 ../src/panel.c:1715 ../data/ui/panel-pref.glade.h:21
+#: ../src/panel.c:1822 ../src/panel.c:1828 ../data/ui/panel-pref.glade.h:21
 msgid "Width:"
 msgstr "Larghezza:"
 
-#: ../src/panel.c:1710 ../data/ui/panel-pref.glade.h:13
+#: ../src/panel.c:1823 ../data/ui/panel-pref.glade.h:13
 msgid "Left"
 msgstr "Sinistra"
 
-#: ../src/panel.c:1711 ../data/ui/panel-pref.glade.h:14
+#: ../src/panel.c:1824 ../data/ui/panel-pref.glade.h:14
 msgid "Right"
 msgstr "Destra"
 
-#: ../src/panel.c:1717 ../data/ui/panel-pref.glade.h:12
+#: ../src/panel.c:1830 ../data/ui/panel-pref.glade.h:12
 msgid "Top"
 msgstr "Superiore"
 
-#: ../src/panel.c:1718 ../data/ui/panel-pref.glade.h:11
+#: ../src/panel.c:1831 ../data/ui/panel-pref.glade.h:11
 msgid "Bottom"
 msgstr "Inferiore"
 
-#: ../src/plugin.c:348
+#: ../src/plugin.c:353
 msgid "No file manager is configured."
 msgstr "Nessun gestore di file configurato."
 
 #. { "configure", N_("Preferences"), configure },
-#: ../src/gtk-run.c:385 ../src/main.c:69 ../plugins/menu.c:718
+#: ../src/gtk-run.c:385 ../src/main.c:70 ../plugins/menu.c:731
 msgid "Run"
 msgstr "Esegui"
 
@@ -168,58 +168,58 @@ msgstr "Esegui"
 msgid "Enter the command you want to execute:"
 msgstr "Digitare il comando da eseguire:"
 
-#: ../src/main.c:70 ../plugins/menu.c:719
+#: ../src/main.c:71 ../plugins/menu.c:732
 msgid "Restart"
 msgstr "Riavvia"
 
-#: ../src/main.c:71 ../plugins/menu.c:720
+#: ../src/main.c:72 ../plugins/menu.c:733
 msgid "Logout"
 msgstr "Chiudi sessione"
 
-#: ../src/main.c:323
+#: ../src/main.c:505
 #, c-format
 msgid "lxpanel %s - lightweight GTK2+ panel for UNIX desktops\n"
 msgstr "lxpanel %s - pannello GTK2+ leggero per desktop UNIX\n"
 
-#: ../src/main.c:324
+#: ../src/main.c:506
 #, c-format
 msgid "Command line options:\n"
 msgstr "Opzioni da riga di comando:\n"
 
-#: ../src/main.c:325
+#: ../src/main.c:507
 #, c-format
 msgid " --help      -- print this help and exit\n"
 msgstr " --help      -- mostra questo aiuto e termina\n"
 
-#: ../src/main.c:326
+#: ../src/main.c:508
 #, c-format
 msgid " --version   -- print version and exit\n"
 msgstr " --version   -- mostra la versione e termina\n"
 
 #. g_print(_(" --log <number> -- set log level 0-5. 0 - none 5 - chatty\n"));
 #. g_print(_(" --configure -- launch configuration utility\n"));
-#: ../src/main.c:329
+#: ../src/main.c:511
 #, c-format
 msgid " --profile name -- use specified profile\n"
 msgstr " --profile NOME -- usa il profilo specificato\n"
 
-#: ../src/main.c:331
+#: ../src/main.c:513
 #, c-format
 msgid " -h  -- same as --help\n"
 msgstr " -h  -- analogo a --help\n"
 
-#: ../src/main.c:332
+#: ../src/main.c:514
 #, c-format
 msgid " -p  -- same as --profile\n"
 msgstr " -p  -- analogo a --profile\n"
 
-#: ../src/main.c:333
+#: ../src/main.c:515
 #, c-format
 msgid " -v  -- same as --version\n"
 msgstr " -v  -- analogo a --version\n"
 
 #. g_print(_(" -C  -- same as --configure\n"));
-#: ../src/main.c:335
+#: ../src/main.c:517
 #, c-format
 msgid ""
 "\n"
@@ -279,7 +279,7 @@ msgid "Spacer"
 msgstr "Spaziatore"
 
 #: ../src/space.c:396 ../data/ui/panel-pref.glade.h:32
-#: ../plugins/batt/batt.c:710
+#: ../plugins/batt/batt.c:714
 msgid "Size"
 msgstr "Dimensione"
 
@@ -287,7 +287,7 @@ msgstr "Dimensione"
 msgid "Allocate space"
 msgstr "Alloca spazio"
 
-#: ../data/ui/launchtaskbar.glade.h:1 ../plugins/launchtaskbar.c:2482
+#: ../data/ui/launchtaskbar.glade.h:1 ../plugins/launchtaskbar.c:2507
 msgid "Application Launch and Task Bar"
 msgstr "Avvio applicazioni e Barra dei task"
 
@@ -616,11 +616,30 @@ msgstr "<b>Livello registro</b>"
 msgid "Advanced"
 msgstr "Avanzate"
 
-#: ../plugins/cpu/cpu.c:310
+#: ../plugins/cpu/cpu.c:368
+#, fuzzy
+msgid "CPU Usage"
+msgstr "Monitor uso CPU"
+
+#: ../plugins/cpu/cpu.c:370
+msgid "Show usage as percentage"
+msgstr "Mostra utilizzo come percentuale"
+
+#: ../plugins/cpu/cpu.c:371
+#, fuzzy
+msgid "Foreground colour"
+msgstr "Colore sfondo"
+
+#: ../plugins/cpu/cpu.c:372
+#, fuzzy
+msgid "Background colour"
+msgstr "Colore sfondo"
+
+#: ../plugins/cpu/cpu.c:380
 msgid "CPU Usage Monitor"
 msgstr "Monitor uso CPU"
 
-#: ../plugins/cpu/cpu.c:311 ../plugins/monitors/monitors.c:734
+#: ../plugins/cpu/cpu.c:382 ../plugins/monitors/monitors.c:734
 msgid "Display CPU usage"
 msgstr "Mostra uso CPU"
 
@@ -628,7 +647,7 @@ msgstr "Mostra uso CPU"
 msgid "Desktop Number / Workspace Name"
 msgstr "Numero scrivania / Nome area di lavoro"
 
-#: ../plugins/deskno/deskno.c:212 ../plugins/dclock.c:439
+#: ../plugins/deskno/deskno.c:212
 msgid "Bold font"
 msgstr "Carattere grassetto"
 
@@ -640,31 +659,31 @@ msgstr "Mostra nomi scrivanie"
 msgid "Display workspace number, by cmeury@users.sf.net"
 msgstr "Mostra il numero dell'area di lavoro, di cmeury@users.sf.net"
 
-#: ../plugins/launchtaskbar.c:1831 ../plugins/launchtaskbar.c:2452
+#: ../plugins/launchtaskbar.c:1835 ../plugins/launchtaskbar.c:2477
 msgid "Application Launch Bar"
 msgstr "Barra avvio applicazioni"
 
-#: ../plugins/launchtaskbar.c:1834 ../plugins/launchtaskbar.c:2462
+#: ../plugins/launchtaskbar.c:1838 ../plugins/launchtaskbar.c:2487
 msgid "Task Bar (Window List)"
 msgstr "Barra delle applicazioni (Elenco finestre)"
 
-#: ../plugins/launchtaskbar.c:1985
+#: ../plugins/launchtaskbar.c:2010
 msgid "A_dd to Launcher"
 msgstr "A_ggiungi al lanciatore"
 
-#: ../plugins/launchtaskbar.c:1987
+#: ../plugins/launchtaskbar.c:2012
 msgid "Rem_ove from Launcher"
 msgstr "Elimina dal lanciat_ore"
 
-#: ../plugins/launchtaskbar.c:1989
+#: ../plugins/launchtaskbar.c:2014
 msgid "_New Instance"
 msgstr "_Nuova istanza"
 
-#: ../plugins/launchtaskbar.c:2453
+#: ../plugins/launchtaskbar.c:2478
 msgid "Bar with buttons to launch application"
 msgstr "Barra con pulsanti per avviare applicazioni"
 
-#: ../plugins/launchtaskbar.c:2463
+#: ../plugins/launchtaskbar.c:2488
 msgid ""
 "Taskbar shows all opened windows and allow to iconify them, shade or get "
 "focus"
@@ -672,111 +691,126 @@ msgstr ""
 "La barra delle applicazioni mostra tutte le finestre aperte e permette di "
 "minimizzarle, arrotolarle o attivarle"
 
-#: ../plugins/launchtaskbar.c:2483
+#: ../plugins/launchtaskbar.c:2508
 msgid "Bar with buttons to launch application and/or show all opened windows"
 msgstr ""
 "Barra con pulsanti per avviare applicazioni e/o mostrare tutte le finestre "
 "aperte"
 
 #. Add Raise menu item.
-#: ../plugins/task-button.c:352
+#: ../plugins/task-button.c:351
 msgid "_Raise"
 msgstr "_Rivela"
 
 #. Add Restore menu item.
-#: ../plugins/task-button.c:357
+#: ../plugins/task-button.c:356
 msgid "R_estore"
 msgstr "R_ipristina"
 
 #. Add Maximize menu item.
-#: ../plugins/task-button.c:362
+#: ../plugins/task-button.c:361
 msgid "Ma_ximize"
 msgstr "Massimi_zza"
 
 #. Add Iconify menu item.
-#: ../plugins/task-button.c:367
+#: ../plugins/task-button.c:366
 msgid "Ico_nify"
 msgstr "Ico_nifica"
 
-#: ../plugins/task-button.c:388
+#: ../plugins/task-button.c:387
 #, c-format
 msgid "Workspace _%d"
 msgstr "Area di lavoro _%d"
 
-#: ../plugins/task-button.c:393
+#: ../plugins/task-button.c:392
 #, c-format
 msgid "Workspace %d"
 msgstr "Area di lavoro %d"
 
 #. Add "move to all workspaces" item.  This causes the window to be visible no matter what desktop is active.
-#: ../plugins/task-button.c:410
+#: ../plugins/task-button.c:409
 msgid "_All workspaces"
 msgstr "_Tutte le aree di lavoro"
 
 #. FIXME: add "Current workspace" item, active if not on a current
 #. Add Move to Workspace menu item as a submenu.
-#: ../plugins/task-button.c:418
+#: ../plugins/task-button.c:417
 msgid "_Move to Workspace"
 msgstr "_Muovi ad area di lavoro"
 
-#: ../plugins/task-button.c:433
+#: ../plugins/task-button.c:432
 msgid "_Close Window"
 msgstr "_Chiudi finestra"
 
-#: ../plugins/task-button.c:1256
+#: ../plugins/task-button.c:1258
 msgid "_Close all windows"
 msgstr "_Chiudi tutte le finestre"
 
-#: ../plugins/dclock.c:433 ../plugins/dclock.c:453
+#: ../plugins/dclock.c:551 ../plugins/dclock.c:574
 msgid "Digital Clock"
 msgstr "Orologio digitale"
 
-#: ../plugins/dclock.c:435
+#: ../plugins/dclock.c:553
 msgid "Clock Format"
 msgstr "Formato orologio"
 
-#: ../plugins/dclock.c:436
+#: ../plugins/dclock.c:554
 msgid "Tooltip Format"
 msgstr "Formato suggerimenti"
 
-#: ../plugins/dclock.c:437
+#: ../plugins/dclock.c:555
 #, c-format
 msgid "Format codes: man 3 strftime; %n for line break"
 msgstr "Codici formato: man 3 strftime; %n per ritorno a capo"
 
-#: ../plugins/dclock.c:438
+#: ../plugins/dclock.c:556
 msgid "Action when clicked (default: display calendar)"
 msgstr "Azione al clic (predefinita: mostra calendario)"
 
-#: ../plugins/dclock.c:440
+#. _("Bold font"), &dc->bold, CONF_TYPE_BOOL,
+#: ../plugins/dclock.c:558
 msgid "Tooltip only"
 msgstr "Solo suggerimenti"
 
-#: ../plugins/dclock.c:441
+#. _("Center text"), &dc->center_text, CONF_TYPE_BOOL,
+#: ../plugins/dclock.c:560
+msgid "Left align"
+msgstr "Allinea a sinistra"
+
+#: ../plugins/dclock.c:561
 msgid "Center text"
 msgstr "Testo centrato"
 
-#: ../plugins/dclock.c:454
+#: ../plugins/dclock.c:562
+#, fuzzy
+msgid "Right align"
+msgstr "PulsanteDestro"
+
+#: ../plugins/dclock.c:575
 msgid "Display digital clock and tooltip"
 msgstr "Mostra orologio digitale e suggerimento"
 
-#: ../plugins/menu.c:360
+#: ../plugins/menu.c:362
 msgid "Add to desktop"
 msgstr "Aggiunge alla scrivania"
 
-#: ../plugins/menu.c:367
+#: ../plugins/menu.c:369
 msgid "Properties"
 msgstr "Proprietà"
 
-#: ../plugins/menu.c:989 ../plugins/menu.c:997
+#: ../plugins/menu.c:715
+msgid "Click here to open applications menu"
+msgstr "Clic qui per aprire il menu applicazioni"
+
+#: ../plugins/menu.c:1018 ../plugins/menu.c:1032
 msgid "Menu"
 msgstr "Menu"
 
-#: ../plugins/menu.c:990 ../plugins/dirmenu.c:359
+#: ../plugins/menu.c:1019 ../plugins/dirmenu.c:359
 msgid "Icon"
 msgstr "Icona"
 
-#: ../plugins/menu.c:998
+#: ../plugins/menu.c:1033
 msgid "Application Menu"
 msgstr "Menu applicazioni"
 
@@ -1339,7 +1373,7 @@ msgid "The interface name"
 msgstr "Nome dell'interfaccia"
 
 #: ../plugins/netstatus/netstatus-iface.c:156
-#: ../plugins/weather/weatherwidget.c:2136
+#: ../plugins/weather/weatherwidget.c:2137
 msgid "State"
 msgstr "Stato"
 
@@ -1579,22 +1613,22 @@ msgstr "In ricezione"
 msgid "Sending/Receiving"
 msgstr "In invio/ricezione"
 
-#: ../plugins/batt/batt.c:155
+#: ../plugins/batt/batt.c:156
 #, c-format
 msgid "Battery %d: %d%% charged, %d:%02d until full"
 msgstr "Batteria %d: %d%% carica, %d:%02d alla carica completa"
 
-#: ../plugins/batt/batt.c:169
+#: ../plugins/batt/batt.c:170
 #, c-format
 msgid "Battery %d: %d%% charged, %d:%02d left"
 msgstr "Batteria %d: %d%% carica, %d:%02d rimanenti"
 
-#: ../plugins/batt/batt.c:176
+#: ../plugins/batt/batt.c:177
 #, c-format
 msgid "Battery %d: %d%% charged"
 msgstr "Batteria %d: %d%% carica"
 
-#: ../plugins/batt/batt.c:186
+#: ../plugins/batt/batt.c:187
 #, c-format
 msgid ""
 "\n"
@@ -1603,7 +1637,7 @@ msgstr ""
 "\n"
 "%sEnergia massima teorica:\t\t%5d mWh"
 
-#: ../plugins/batt/batt.c:188
+#: ../plugins/batt/batt.c:189
 #, c-format
 msgid ""
 "\n"
@@ -1612,7 +1646,7 @@ msgstr ""
 "\n"
 "%sEnergia massima:\t\t\t%5d mWh"
 
-#: ../plugins/batt/batt.c:190
+#: ../plugins/batt/batt.c:191
 #, c-format
 msgid ""
 "\n"
@@ -1621,7 +1655,7 @@ msgstr ""
 "\n"
 "%sEnergia ora:\t\t\t%5d mWh"
 
-#: ../plugins/batt/batt.c:192
+#: ../plugins/batt/batt.c:193
 #, c-format
 msgid ""
 "\n"
@@ -1630,7 +1664,7 @@ msgstr ""
 "\n"
 "%sPotenza ora:\t\t\t%5d mW"
 
-#: ../plugins/batt/batt.c:195
+#: ../plugins/batt/batt.c:196
 #, c-format
 msgid ""
 "\n"
@@ -1639,7 +1673,7 @@ msgstr ""
 "\n"
 "%sCarica massima teorica:\t%5d mAh"
 
-#: ../plugins/batt/batt.c:197
+#: ../plugins/batt/batt.c:198
 #, c-format
 msgid ""
 "\n"
@@ -1648,7 +1682,7 @@ msgstr ""
 "\n"
 "%sCarica massima:\t\t\t%5d mAh"
 
-#: ../plugins/batt/batt.c:199
+#: ../plugins/batt/batt.c:200
 #, c-format
 msgid ""
 "\n"
@@ -1657,7 +1691,7 @@ msgstr ""
 "\n"
 "%sCarica ora:\t\t\t%5d mAh"
 
-#: ../plugins/batt/batt.c:201
+#: ../plugins/batt/batt.c:202
 #, c-format
 msgid ""
 "\n"
@@ -1666,7 +1700,7 @@ msgstr ""
 "\n"
 "%sCorrente ora:\t\t\t%5d mA"
 
-#: ../plugins/batt/batt.c:204
+#: ../plugins/batt/batt.c:205
 #, c-format
 msgid ""
 "\n"
@@ -1675,63 +1709,63 @@ msgstr ""
 "\n"
 "%sVoltaggio corrente:\t\t%.3lf V"
 
-#: ../plugins/batt/batt.c:242
+#: ../plugins/batt/batt.c:243
 msgid "No batteries found"
 msgstr "Nessuna batteria rilevata"
 
-#: ../plugins/batt/batt.c:542 ../plugins/batt/batt.c:675
+#: ../plugins/batt/batt.c:546 ../plugins/batt/batt.c:679
 msgid "Battery low"
 msgstr "Batteria quasi scarica"
 
-#: ../plugins/batt/batt.c:698 ../plugins/batt/batt.c:722
+#: ../plugins/batt/batt.c:702 ../plugins/batt/batt.c:726
 msgid "Battery Monitor"
 msgstr "Monitor batteria"
 
-#: ../plugins/batt/batt.c:700
+#: ../plugins/batt/batt.c:704
 msgid "Hide if there is no battery"
 msgstr "Nascondi se non ci sono batterie"
 
-#: ../plugins/batt/batt.c:701
+#: ../plugins/batt/batt.c:705
 msgid "Alarm command"
 msgstr "Comando di allarme"
 
-#: ../plugins/batt/batt.c:702
+#: ../plugins/batt/batt.c:706
 msgid "Alarm time (minutes left)"
 msgstr "Tempo allarme (minuti restanti)"
 
-#: ../plugins/batt/batt.c:703
+#: ../plugins/batt/batt.c:707
 msgid "Background color"
 msgstr "Colore sfondo"
 
-#: ../plugins/batt/batt.c:704
+#: ../plugins/batt/batt.c:708
 msgid "Charging color 1"
 msgstr "Colore 1 ricarica"
 
-#: ../plugins/batt/batt.c:705
+#: ../plugins/batt/batt.c:709
 msgid "Charging color 2"
 msgstr "Colore 2 ricarica"
 
-#: ../plugins/batt/batt.c:706
+#: ../plugins/batt/batt.c:710
 msgid "Discharging color 1"
 msgstr "Colore 1 scarica"
 
-#: ../plugins/batt/batt.c:707
+#: ../plugins/batt/batt.c:711
 msgid "Discharging color 2"
 msgstr "Colore 2 scarica"
 
-#: ../plugins/batt/batt.c:708
+#: ../plugins/batt/batt.c:712
 msgid "Border width"
 msgstr "Larghezza bordo"
 
-#: ../plugins/batt/batt.c:712
+#: ../plugins/batt/batt.c:716
 msgid "Show Extended Information"
 msgstr "Mostra informazioni dettagliate"
 
-#: ../plugins/batt/batt.c:713
+#: ../plugins/batt/batt.c:717
 msgid "Number of battery to monitor"
 msgstr "Numero della batteria da monitorare"
 
-#: ../plugins/batt/batt.c:723
+#: ../plugins/batt/batt.c:727
 msgid "Display battery status using ACPI"
 msgstr "Mostra stato batteria tramite ACPI"
 
@@ -1830,15 +1864,15 @@ msgstr "Mostra monitoraggi (CPU, RAM)"
 msgid "[N/A]"
 msgstr "[N/D]"
 
-#: ../plugins/weather/weatherwidget.c:807
+#: ../plugins/weather/weatherwidget.c:806
 msgid "Enter New Location"
 msgstr "Inserire una nuova località"
 
-#: ../plugins/weather/weatherwidget.c:821
+#: ../plugins/weather/weatherwidget.c:820
 msgid "_New Location:"
 msgstr "_Nuova località:"
 
-#: ../plugins/weather/weatherwidget.c:832
+#: ../plugins/weather/weatherwidget.c:831
 msgid ""
 "Enter the:\n"
 "- city, or\n"
@@ -1852,250 +1886,250 @@ msgstr ""
 "- il codice postale\n"
 "di cui recuperare le previsioni del tempo."
 
-#: ../plugins/weather/weatherwidget.c:869
-#: ../plugins/weather/weatherwidget.c:1002
+#: ../plugins/weather/weatherwidget.c:868
+#: ../plugins/weather/weatherwidget.c:1001
 msgid "You must specify a location."
 msgstr "È necessario specificare una località."
 
-#: ../plugins/weather/weatherwidget.c:916
+#: ../plugins/weather/weatherwidget.c:915
 #, c-format
 msgid "Location '%s' not found!"
 msgstr "Località «%s» non trovata!"
 
-#: ../plugins/weather/weatherwidget.c:1075
+#: ../plugins/weather/weatherwidget.c:1074
 msgid "Preferences"
 msgstr "Preferenze"
 
-#: ../plugins/weather/weatherwidget.c:1081
+#: ../plugins/weather/weatherwidget.c:1080
 msgid "Refresh"
 msgstr "Aggiorna"
 
-#: ../plugins/weather/weatherwidget.c:1087
+#: ../plugins/weather/weatherwidget.c:1086
 msgid "Quit"
 msgstr "Esci"
 
-#: ../plugins/weather/weatherwidget.c:1254
+#: ../plugins/weather/weatherwidget.c:1253
 msgid "Weather Preferences"
 msgstr "Preferenze delle condizioni meteo"
 
-#: ../plugins/weather/weatherwidget.c:1268
+#: ../plugins/weather/weatherwidget.c:1267
 msgid "Current Location"
 msgstr "Località corrente"
 
-#: ../plugins/weather/weatherwidget.c:1272
-#: ../plugins/weather/weatherwidget.c:1574
+#: ../plugins/weather/weatherwidget.c:1271
+#: ../plugins/weather/weatherwidget.c:1573
 msgid "None configured"
 msgstr "Non configurata"
 
-#: ../plugins/weather/weatherwidget.c:1274
-#: ../plugins/weather/weatherwidget.c:1571
+#: ../plugins/weather/weatherwidget.c:1273
+#: ../plugins/weather/weatherwidget.c:1570
 msgid "_Set"
 msgstr "Impo_sta"
 
-#: ../plugins/weather/weatherwidget.c:1295
+#: ../plugins/weather/weatherwidget.c:1294
 msgid "Display"
 msgstr "Visualizzazione"
 
-#: ../plugins/weather/weatherwidget.c:1299
+#: ../plugins/weather/weatherwidget.c:1298
 msgid "Name:"
 msgstr "_Nome:"
 
-#: ../plugins/weather/weatherwidget.c:1303
+#: ../plugins/weather/weatherwidget.c:1302
 msgid "Units:"
 msgstr "Unità:"
 
-#: ../plugins/weather/weatherwidget.c:1307
+#: ../plugins/weather/weatherwidget.c:1306
 #, fuzzy
 msgid "_Metric (°C)"
 msgstr "_Metriche (°C)"
 
-#: ../plugins/weather/weatherwidget.c:1309
+#: ../plugins/weather/weatherwidget.c:1308
 #, fuzzy
 msgid "_English (°F)"
 msgstr "Imp_eriali (°F)"
 
-#: ../plugins/weather/weatherwidget.c:1344
+#: ../plugins/weather/weatherwidget.c:1343
 msgid "Forecast"
 msgstr "Previsioni"
 
-#: ../plugins/weather/weatherwidget.c:1348
+#: ../plugins/weather/weatherwidget.c:1347
 msgid "Updates:"
 msgstr "Aggiornamenti:"
 
-#: ../plugins/weather/weatherwidget.c:1352
+#: ../plugins/weather/weatherwidget.c:1351
 msgid "Ma_nual"
 msgstr "Ma_nuali"
 
-#: ../plugins/weather/weatherwidget.c:1356
+#: ../plugins/weather/weatherwidget.c:1355
 msgid "_Automatic, every"
 msgstr "_Automatici, ogni"
 
-#: ../plugins/weather/weatherwidget.c:1377
+#: ../plugins/weather/weatherwidget.c:1376
 msgid "minutes"
 msgstr "minuti"
 
-#: ../plugins/weather/weatherwidget.c:1386
+#: ../plugins/weather/weatherwidget.c:1385
 msgid "Source:"
 msgstr "Fonte:"
 
-#: ../plugins/weather/weatherwidget.c:1522
+#: ../plugins/weather/weatherwidget.c:1521
 msgid "C_hange"
 msgstr "Camb_ia"
 
 #. Both are available
-#: ../plugins/weather/weatherwidget.c:1613
+#: ../plugins/weather/weatherwidget.c:1612
 #, c-format
 msgid "Current Conditions for %s"
 msgstr "Condizioni attuali per %s"
 
-#: ../plugins/weather/weatherwidget.c:1637
+#: ../plugins/weather/weatherwidget.c:1636
 msgid "Location:"
 msgstr "Località:"
 
-#: ../plugins/weather/weatherwidget.c:1660
+#: ../plugins/weather/weatherwidget.c:1659
 msgid "Last updated:"
 msgstr "Ultimo aggiornamento:"
 
-#: ../plugins/weather/weatherwidget.c:1694
+#: ../plugins/weather/weatherwidget.c:1693
 msgid "Feels like:"
 msgstr "Percepita:"
 
-#: ../plugins/weather/weatherwidget.c:1720
+#: ../plugins/weather/weatherwidget.c:1719
 msgid "Humidity:"
 msgstr "Umidità:"
 
-#: ../plugins/weather/weatherwidget.c:1747
+#: ../plugins/weather/weatherwidget.c:1746
 msgid "Pressure:"
 msgstr "Pressione:"
 
-#: ../plugins/weather/weatherwidget.c:1774
+#: ../plugins/weather/weatherwidget.c:1773
 msgid "Visibility:"
 msgstr "Visibilità:"
 
-#: ../plugins/weather/weatherwidget.c:1802
+#: ../plugins/weather/weatherwidget.c:1801
 msgid "Wind:"
 msgstr "Vento:"
 
-#: ../plugins/weather/weatherwidget.c:1825
+#: ../plugins/weather/weatherwidget.c:1824
 msgid "Sunrise:"
 msgstr "Alba:"
 
-#: ../plugins/weather/weatherwidget.c:1848
+#: ../plugins/weather/weatherwidget.c:1847
 msgid "Sunset:"
 msgstr "Tramonto:"
 
-#: ../plugins/weather/weatherwidget.c:1954
-#: ../plugins/weather/weatherwidget.c:2295
+#: ../plugins/weather/weatherwidget.c:1955
+#: ../plugins/weather/weatherwidget.c:2306
 #, c-format
 msgid "Forecast for %s unavailable."
 msgstr "Previsioni non disponibili per %s."
 
-#: ../plugins/weather/weatherwidget.c:1963
-#: ../plugins/weather/weatherwidget.c:2300
+#: ../plugins/weather/weatherwidget.c:1964
+#: ../plugins/weather/weatherwidget.c:2311
 #, c-format
 msgid "Location not set."
 msgstr "Località non impostata."
 
-#: ../plugins/weather/weatherwidget.c:1980
+#: ../plugins/weather/weatherwidget.c:1981
 #, c-format
 msgid "Searching for '%s'..."
 msgstr "Ricerca di «%s»..."
 
-#: ../plugins/weather/weatherwidget.c:2106
+#: ../plugins/weather/weatherwidget.c:2107
 #, c-format
 msgid "Location matches for '%s'"
 msgstr "Località corrispondenti a «%s»"
 
-#: ../plugins/weather/weatherwidget.c:2126
+#: ../plugins/weather/weatherwidget.c:2127
 msgid "City"
 msgstr "Città"
 
-#: ../plugins/weather/weatherwidget.c:2146
+#: ../plugins/weather/weatherwidget.c:2147
 msgid "Country"
 msgstr "Nazione"
 
 #. make it nice and pretty
-#: ../plugins/weather/weatherwidget.c:2278
+#: ../plugins/weather/weatherwidget.c:2286
 msgid "Currently in "
 msgstr "Attualmente "
 
-#: ../plugins/weather/weatherwidget.c:2281
+#: ../plugins/weather/weatherwidget.c:2292
 msgid "Today: "
 msgstr "Oggi: "
 
-#: ../plugins/weather/weatherwidget.c:2282
+#: ../plugins/weather/weatherwidget.c:2293
 msgid "Tomorrow: "
 msgstr "Domani: "
 
-#: ../plugins/weather/weather.c:419
+#: ../plugins/weather/weather.c:415
 msgid "Weather Plugin"
 msgstr "Plugin per le previsioni del tempo"
 
-#: ../plugins/weather/weather.c:420
+#: ../plugins/weather/weather.c:416
 msgid "Show weather conditions for a location."
 msgstr "Mostra le condizioni meteo per una località."
 
-#: ../plugins/weather/yahooutil.c:51
+#: ../plugins/weather/yahooutil.c:51 ../plugins/weather/openweathermap.c:56
 msgid "N"
 msgstr "N"
 
-#: ../plugins/weather/yahooutil.c:52
+#: ../plugins/weather/yahooutil.c:52 ../plugins/weather/openweathermap.c:57
 msgid "NNE"
 msgstr "NNE"
 
-#: ../plugins/weather/yahooutil.c:53
+#: ../plugins/weather/yahooutil.c:53 ../plugins/weather/openweathermap.c:58
 msgid "NE"
 msgstr "NE"
 
-#: ../plugins/weather/yahooutil.c:54
+#: ../plugins/weather/yahooutil.c:54 ../plugins/weather/openweathermap.c:59
 msgid "ENE"
 msgstr "ENE"
 
-#: ../plugins/weather/yahooutil.c:55
+#: ../plugins/weather/yahooutil.c:55 ../plugins/weather/openweathermap.c:60
 msgid "E"
 msgstr "E"
 
-#: ../plugins/weather/yahooutil.c:56
+#: ../plugins/weather/yahooutil.c:56 ../plugins/weather/openweathermap.c:61
 msgid "ESE"
 msgstr "ESE"
 
-#: ../plugins/weather/yahooutil.c:57
+#: ../plugins/weather/yahooutil.c:57 ../plugins/weather/openweathermap.c:62
 msgid "SE"
 msgstr "SE"
 
-#: ../plugins/weather/yahooutil.c:58
+#: ../plugins/weather/yahooutil.c:58 ../plugins/weather/openweathermap.c:63
 msgid "SSE"
 msgstr "SSE"
 
-#: ../plugins/weather/yahooutil.c:59
+#: ../plugins/weather/yahooutil.c:59 ../plugins/weather/openweathermap.c:64
 msgid "S"
 msgstr "S"
 
-#: ../plugins/weather/yahooutil.c:60
+#: ../plugins/weather/yahooutil.c:60 ../plugins/weather/openweathermap.c:65
 msgid "SSW"
 msgstr "SSO"
 
-#: ../plugins/weather/yahooutil.c:61
+#: ../plugins/weather/yahooutil.c:61 ../plugins/weather/openweathermap.c:66
 msgid "SW"
 msgstr "SO"
 
-#: ../plugins/weather/yahooutil.c:62
+#: ../plugins/weather/yahooutil.c:62 ../plugins/weather/openweathermap.c:67
 msgid "WSW"
 msgstr "OSO"
 
-#: ../plugins/weather/yahooutil.c:63
+#: ../plugins/weather/yahooutil.c:63 ../plugins/weather/openweathermap.c:68
 msgid "W"
 msgstr "O"
 
-#: ../plugins/weather/yahooutil.c:64
+#: ../plugins/weather/yahooutil.c:64 ../plugins/weather/openweathermap.c:69
 msgid "WNW"
 msgstr "ONO"
 
-#: ../plugins/weather/yahooutil.c:65
+#: ../plugins/weather/yahooutil.c:65 ../plugins/weather/openweathermap.c:70
 msgid "NW"
 msgstr "NO"
 
-#: ../plugins/weather/yahooutil.c:66
+#: ../plugins/weather/yahooutil.c:66 ../plugins/weather/openweathermap.c:71
 msgid "NNW"
 msgstr "NNO"
 
@@ -2103,20 +2137,20 @@ msgstr "NNO"
 msgid "Yahoo! Weather"
 msgstr "Yahoo! Meteo"
 
-#: ../plugins/weather/openweathermap.c:347
+#: ../plugins/weather/openweathermap.c:365
 msgid "Mph"
 msgstr "miglia/ora"
 
-#: ../plugins/weather/openweathermap.c:347
+#: ../plugins/weather/openweathermap.c:365
 msgid "m/s"
 msgstr "m/s"
 
 # visibility in meters
-#: ../plugins/weather/openweathermap.c:501
+#: ../plugins/weather/openweathermap.c:535
 msgid "m"
 msgstr "m"
 
-#: ../plugins/weather/openweathermap.c:916
+#: ../plugins/weather/openweathermap.c:932
 msgid "OpenWeatherMap"
 msgstr "OpenWeatherMap"
 
