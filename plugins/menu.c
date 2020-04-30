@@ -78,6 +78,7 @@ typedef struct {
     GtkWidget *menu, *box, *img, *label;
     char *fname, *caption;
     int iconsize;
+    int padding;
     gboolean has_system_menu;
     guint show_system_menu_idle;
     LXPanel *panel;
@@ -711,6 +712,7 @@ make_button(menup *m, const gchar *fname, const gchar *name, GdkColor* tint, Gtk
     }
 
     gtk_widget_set_visible (m->img, TRUE);
+    if (m->padding) gtk_widget_set_size_request (m->img, m->iconsize + 2 * m->padding, -1);
     gtk_container_add(GTK_CONTAINER(m->box), m->img);
     gtk_widget_set_tooltip_text (m->box, _("Click here to open applications menu"));
 
@@ -962,6 +964,9 @@ menu_constructor(LXPanel *panel, config_setting_t *settings)
     m->panel = panel;
     m->settings = settings;
 
+    m->padding = 0;
+    if (config_setting_lookup_int (settings, "padding", &iw))
+        m->padding = iw;
     /* Check if configuration exists */
     settings = config_setting_add(settings, "", PANEL_CONF_TYPE_LIST);
     if (config_setting_get_elem(settings, 0) == NULL)
@@ -997,10 +1002,12 @@ static gboolean apply_config(gpointer user_data)
 
     if( m->fname ) {
         lxpanel_plugin_set_taskbar_icon (m->panel, m->img, m->fname);
+        if (m->padding) gtk_widget_set_size_request (m->img, m->iconsize + 2 * m->padding, -1);
     }
     config_group_set_string(m->settings, "image", m->fname);
     /* config_group_set_int(m->settings, "panelSize", m->match_panel); */
     config_group_set_string(m->settings, "name", m->caption);
+    config_group_set_int(m->settings, "padding", m->padding);
     if (m->menu) gtk_widget_destroy(m->menu);
     if( m->menu_cache )
     {
@@ -1017,6 +1024,7 @@ static GtkWidget *menu_config(LXPanel *panel, GtkWidget *p)
     menup* menu = lxpanel_plugin_get_data(p);
     return lxpanel_generic_config_dlg(_("Menu"), panel, apply_config, p,
                                       _("Icon"), &menu->fname, CONF_TYPE_FILE_ENTRY,
+                                      _("Padding"), &menu->padding, CONF_TYPE_INT,
                                       /* _("Use panel size as icon size"), &menu->match_panel, CONF_TYPE_INT, */
                                       /* _("Caption"), &menu->caption, CONF_TYPE_STR, */
                                       NULL);
