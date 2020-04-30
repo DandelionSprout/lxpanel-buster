@@ -91,8 +91,7 @@ msgid "Desktop panel for LXDE project"
 msgstr "Desktop panel for LXDE project"
 
 #: ../src/panel.c:1532
-#, fuzzy, c-format
-msgid "%s Settings"
+msgid "\"%s\" Settings"
 msgstr "\"%s\" Settings"
 
 #: ../src/panel.c:1553
@@ -614,21 +613,18 @@ msgid "Advanced"
 msgstr "Advanced"
 
 #: ../plugins/cpu/cpu.c:368
-#, fuzzy
 msgid "CPU Usage"
-msgstr "CPU Usage Monitor"
+msgstr "CPU Usage"
 
 #: ../plugins/cpu/cpu.c:370
 msgid "Show usage as percentage"
-msgstr ""
+msgstr "Show usage as percentage"
 
 #: ../plugins/cpu/cpu.c:371
-#, fuzzy
 msgid "Foreground colour"
-msgstr "Background colour"
+msgstr "Foreground colour"
 
 #: ../plugins/cpu/cpu.c:372
-#, fuzzy
 msgid "Background colour"
 msgstr "Background colour"
 
@@ -765,24 +761,21 @@ msgstr "Format codes: man 3 strftime; \\n for line break"
 msgid "Action when clicked (default: display calendar)"
 msgstr "Action when clicked (default: display calendar)"
 
-#. _("Bold font"), &dc->bold, CONF_TYPE_BOOL,
 #: ../plugins/dclock.c:558
 msgid "Tooltip only"
 msgstr "Tooltip only"
 
-#. _("Center text"), &dc->center_text, CONF_TYPE_BOOL,
 #: ../plugins/dclock.c:560
 msgid "Left align"
-msgstr ""
+msgstr "Left align"
 
 #: ../plugins/dclock.c:561
 msgid "Center text"
 msgstr "Centre text"
 
 #: ../plugins/dclock.c:562
-#, fuzzy
 msgid "Right align"
-msgstr "Right"
+msgstr "Right align"
 
 #: ../plugins/dclock.c:575
 msgid "Display digital clock and tooltip"
@@ -798,7 +791,7 @@ msgstr "Properties"
 
 #: ../plugins/menu.c:715
 msgid "Click here to open applications menu"
-msgstr ""
+msgstr "Click here to open applications menu"
 
 #: ../plugins/menu.c:1018 ../plugins/menu.c:1032
 msgid "Menu"
