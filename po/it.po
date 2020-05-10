@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: LxPanel\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-06 12:53+0200\n"
-"PO-Revision-Date: 2020-05-10 22:01+0200\n"
+"PO-Revision-Date: 2020-05-10 23:46+0200\n"
 "Last-Translator: Emanuele Goldoni <emanuele.goldoni@gmail.com>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -104,7 +104,7 @@ msgstr "Impostazioni di %s"
 
 #: ../src/panel.c:1553
 msgid "Add / Remove Panel Items"
-msgstr "Aggiungi/Rimuovi elementi pannello"
+msgstr "Aggiungi / Rimuovi elementi del pannello"
 
 #: ../src/panel.c:1561
 #, c-format
@@ -362,7 +362,7 @@ msgstr "Solo barra avvio applicazioni"
 
 #: ../data/ui/launchtaskbar.glade.h:20
 msgid "Only Task Bar (Window List)"
-msgstr "Solo barra dei task (Elenco finestre)"
+msgstr "Solo barra dei task (elenco finestre)"
 
 #: ../data/ui/launchtaskbar.glade.h:21
 msgid "Integrated Application Launch Bar and Task Bar"
@@ -582,7 +582,7 @@ msgstr "I window manager devono trattare il pannello come dock"
 
 #: ../data/ui/panel-pref.glade.h:41
 msgid "Reserve space, and not covered by maximized windows"
-msgstr "Riserva spazio e non coprire con finestre massimizzate"
+msgstr "Riserva spazio e non coprirlo con finestre massimizzate"
 
 #: ../data/ui/panel-pref.glade.h:42
 msgid "<b>Properties</b>"
@@ -662,7 +662,7 @@ msgstr "Barra avvio applicazioni"
 
 #: ../plugins/launchtaskbar.c:1838 ../plugins/launchtaskbar.c:2487
 msgid "Task Bar (Window List)"
-msgstr "Barra delle applicazioni (Elenco finestre)"
+msgstr "Barra dei task (elenco finestre)"
 
 #: ../plugins/launchtaskbar.c:2010
 msgid "A_dd to Launcher"
@@ -685,7 +685,7 @@ msgid ""
 "Taskbar shows all opened windows and allow to iconify them, shade or get "
 "focus"
 msgstr ""
-"La barra delle applicazioni mostra tutte le finestre aperte e permette di "
+"La barra dei task mostra tutte le finestre aperte e permette di "
 "minimizzarle, arrotolarle o attivarle"
 
 #: ../plugins/launchtaskbar.c:2508
@@ -950,7 +950,7 @@ msgstr "Minimizza tutte le finestre"
 
 #: ../plugins/wincmd.c:247
 msgid "Alternately iconify/shade and raise"
-msgstr "Iconificare/arrotolare e rivelare alternativamente"
+msgstr "Iconificare / Arrotolare e rivelare alternativamente"
 
 #: ../plugins/wincmd.c:256
 msgid ""
@@ -1113,7 +1113,7 @@ msgstr "Clic per il cursore del volume"
 
 #: ../plugins/volumealsa/volumealsa.c:1446
 msgid "Click for Toggle Mute"
-msgstr "Clic per attivare/disattivare il volume"
+msgstr "Clic per attivare / disattivare il volume"
 
 #: ../plugins/volumealsa/volumealsa.c:1450
 msgid "Click for Open Mixer"
@@ -1862,7 +1862,7 @@ msgstr "Mostra monitoraggi (CPU, RAM)"
 
 #: ../plugins/weather/weatherwidget.c:52
 msgid "[N/A]"
-msgstr "[N/D]"
+msgstr "[N.D.]"
 
 #: ../plugins/weather/weatherwidget.c:806
 msgid "Enter New Location"
