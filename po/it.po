@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LxPanel\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-29 13:37+0200\n"
-"PO-Revision-Date: 2020-04-29 13:42+0200\n"
+"POT-Creation-Date: 2020-05-06 12:53+0200\n"
+"PO-Revision-Date: 2020-05-10 14:52+0200\n"
 "Last-Translator: Emanuele Goldoni <emanuele.goldoni@gmail.com>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3\n"
 
 #: ../src/configurator.c:148
 msgid ""
@@ -98,7 +98,7 @@ msgid "Desktop panel for LXDE project"
 msgstr "Pannello del desktop per il Progetto LXDE"
 
 #: ../src/panel.c:1532
-#, fuzzy, c-format
+#, c-format
 msgid "%s Settings"
 msgstr "Impostazioni di %s"
 
@@ -160,7 +160,7 @@ msgid "No file manager is configured."
 msgstr "Nessun gestore di file configurato."
 
 #. { "configure", N_("Preferences"), configure },
-#: ../src/gtk-run.c:385 ../src/main.c:70 ../plugins/menu.c:731
+#: ../src/gtk-run.c:385 ../src/main.c:70 ../plugins/menu.c:733
 msgid "Run"
 msgstr "Esegui"
 
@@ -168,11 +168,11 @@ msgstr "Esegui"
 msgid "Enter the command you want to execute:"
 msgstr "Digitare il comando da eseguire:"
 
-#: ../src/main.c:71 ../plugins/menu.c:732
+#: ../src/main.c:71 ../plugins/menu.c:734
 msgid "Restart"
 msgstr "Riavvia"
 
-#: ../src/main.c:72 ../plugins/menu.c:733
+#: ../src/main.c:72 ../plugins/menu.c:735
 msgid "Logout"
 msgstr "Chiudi sessione"
 
@@ -463,7 +463,7 @@ msgstr "Pixel"
 #: ../data/ui/panel-pref.glade.h:4
 #, no-c-format
 msgid "% Percent"
-msgstr "% Percento"
+msgstr "% (percentuale)"
 
 # è un'opzione per "Livello registro:"
 #: ../data/ui/panel-pref.glade.h:6
@@ -582,7 +582,7 @@ msgstr "I window manager devono trattare il pannello come dock"
 
 #: ../data/ui/panel-pref.glade.h:41
 msgid "Reserve space, and not covered by maximized windows"
-msgstr "Riserva spazio e non è coperto da finestre massimizzate"
+msgstr "Riserva spazio e non coprire con finestre massimizzate"
 
 #: ../data/ui/panel-pref.glade.h:42
 msgid "<b>Properties</b>"
@@ -617,31 +617,28 @@ msgid "Advanced"
 msgstr "Avanzate"
 
 #: ../plugins/cpu/cpu.c:368
-#, fuzzy
 msgid "CPU Usage"
-msgstr "Monitor uso CPU"
+msgstr "Utilizzo CPU"
 
 #: ../plugins/cpu/cpu.c:370
 msgid "Show usage as percentage"
 msgstr "Mostra utilizzo come percentuale"
 
 #: ../plugins/cpu/cpu.c:371
-#, fuzzy
 msgid "Foreground colour"
-msgstr "Colore sfondo"
+msgstr "Colore in primo piano"
 
 #: ../plugins/cpu/cpu.c:372
-#, fuzzy
 msgid "Background colour"
-msgstr "Colore sfondo"
+msgstr "Colore di sfondo"
 
 #: ../plugins/cpu/cpu.c:380
 msgid "CPU Usage Monitor"
-msgstr "Monitor uso CPU"
+msgstr "Monitor utilizzo CPU"
 
 #: ../plugins/cpu/cpu.c:382 ../plugins/monitors/monitors.c:734
 msgid "Display CPU usage"
-msgstr "Mostra uso CPU"
+msgstr "Mostra utilizzo CPU"
 
 #: ../plugins/deskno/deskno.c:210 ../plugins/deskno/deskno.c:230
 msgid "Desktop Number / Workspace Name"
@@ -782,35 +779,38 @@ msgid "Center text"
 msgstr "Testo centrato"
 
 #: ../plugins/dclock.c:562
-#, fuzzy
 msgid "Right align"
-msgstr "PulsanteDestro"
+msgstr "Allinea a destra"
 
 #: ../plugins/dclock.c:575
 msgid "Display digital clock and tooltip"
 msgstr "Mostra orologio digitale e suggerimento"
 
-#: ../plugins/menu.c:362
+#: ../plugins/menu.c:363
 msgid "Add to desktop"
 msgstr "Aggiunge alla scrivania"
 
-#: ../plugins/menu.c:369
+#: ../plugins/menu.c:370
 msgid "Properties"
 msgstr "Proprietà"
 
-#: ../plugins/menu.c:715
+#: ../plugins/menu.c:717
 msgid "Click here to open applications menu"
 msgstr "Clic qui per aprire il menu applicazioni"
 
-#: ../plugins/menu.c:1018 ../plugins/menu.c:1032
+#: ../plugins/menu.c:1025 ../plugins/menu.c:1040
 msgid "Menu"
 msgstr "Menu"
 
-#: ../plugins/menu.c:1019 ../plugins/dirmenu.c:359
+#: ../plugins/menu.c:1026 ../plugins/dirmenu.c:359
 msgid "Icon"
 msgstr "Icona"
 
-#: ../plugins/menu.c:1033
+#: ../plugins/menu.c:1027
+msgid "Padding"
+msgstr "Riempimento"
+
+#: ../plugins/menu.c:1041
 msgid "Application Menu"
 msgstr "Menu applicazioni"
 
@@ -1829,12 +1829,12 @@ msgstr "Aggiunge applet Indicatore al pannello"
 #: ../plugins/monitors/monitors.c:285
 #, c-format
 msgid "CPU usage: %.2f%%"
-msgstr "Uso CPU: %.2f%%"
+msgstr "Utilizzo CPU: %.2f%%"
 
 #: ../plugins/monitors/monitors.c:386
 #, c-format
 msgid "RAM usage: %.1fMB (%.2f%%)"
-msgstr "Uso RAM: %.1fMB (%.2f%%)"
+msgstr "Utilizzo RAM: %.1fMB (%.2f%%)"
 
 #: ../plugins/monitors/monitors.c:732 ../plugins/monitors/monitors.c:821
 msgid "Resource monitors"
@@ -1846,7 +1846,7 @@ msgstr "Colore CPU"
 
 #: ../plugins/monitors/monitors.c:736
 msgid "Display RAM usage"
-msgstr "Mostra uso RAM"
+msgstr "Mostra utilizzo RAM"
 
 #: ../plugins/monitors/monitors.c:737
 msgid "RAM color"
@@ -1939,12 +1939,10 @@ msgid "Units:"
 msgstr "Unità:"
 
 #: ../plugins/weather/weatherwidget.c:1306
-#, fuzzy
 msgid "_Metric (°C)"
 msgstr "_Metriche (°C)"
 
 #: ../plugins/weather/weatherwidget.c:1308
-#, fuzzy
 msgid "_English (°F)"
 msgstr "Imp_eriali (°F)"
 
