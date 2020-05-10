@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: LxPanel\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-06 12:53+0200\n"
-"PO-Revision-Date: 2020-05-10 14:52+0200\n"
+"PO-Revision-Date: 2020-05-10 22:01+0200\n"
 "Last-Translator: Emanuele Goldoni <emanuele.goldoni@gmail.com>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -1549,7 +1549,7 @@ msgstr "Impossibile analizzare /proc/net/dev. Formato sconosciuto."
 #: ../plugins/netstatus/netstatus-sysdeps.c:332
 #, c-format
 msgid "Could not parse interface name from '%s'"
-msgstr "Impossibile analizzare il nome dell'interfaccia da '%s'"
+msgstr "Impossibile analizzare il nome dell'interfaccia da «%s»"
 
 #: ../plugins/netstatus/netstatus-sysdeps.c:218
 #: ../plugins/netstatus/netstatus-sysdeps.c:647
@@ -1558,7 +1558,7 @@ msgid ""
 "Could not parse interface statistics from '%s'. prx_idx = %d; ptx_idx = %d; "
 "brx_idx = %d; btx_idx = %d;"
 msgstr ""
-"Impossibile analizzare le statistiche dell'interfaccia da \"%s\". prx_idx = "
+"Impossibile analizzare le statistiche dell'interfaccia da «%s». prx_idx = "
 "%d; ptx_idx = %d; brx_idx = %d; btx_idx = %d;"
 
 #: ../plugins/netstatus/netstatus-sysdeps.c:312
@@ -1572,26 +1572,26 @@ msgstr "Impossibile analizzare /proc/net/wireless. Formato sconosciuto."
 #: ../plugins/netstatus/netstatus-sysdeps.c:343
 #, c-format
 msgid "Could not parse wireless details from '%s'. link_idx = %d;"
-msgstr "Impossibile analizzare i dettagli wireless da \"%s\". link_idx = %d;"
+msgstr "Impossibile analizzare i dettagli wireless da «%s». link_idx = %d;"
 
 #: ../plugins/netstatus/netstatus-sysdeps.c:416
 #, c-format
 msgid "Could not connect to interface, '%s'"
-msgstr "Impossibile connettersi all'interfaccia, \"%s\""
+msgstr "Impossibile connettersi all'interfaccia, «%s»"
 
 #: ../plugins/netstatus/netstatus-sysdeps.c:422
 #, c-format
 msgid "Could not send ioctl to interface, '%s'"
-msgstr "Impossibile inviare ioctl all'interfaccia, \"%s\""
+msgstr "Impossibile inviare ioctl all'interfaccia, «%s»"
 
 #: ../plugins/netstatus/netstatus-sysdeps.c:600
 #, c-format
 msgid "Could not parse command line '%s': %s"
-msgstr "Impossibile analizzare la riga di comando \"%s\": %s"
+msgstr "Impossibile analizzare la riga di comando «%s»: %s"
 
 #: ../plugins/netstatus/netstatus-sysdeps.c:637
 msgid "Could not parse 'netstat' output. Unknown format"
-msgstr "Impossibile analizzare l'output di \"netstat\". Formato sconosciuto."
+msgstr "Impossibile analizzare l'output di «netstat». Formato sconosciuto."
 
 #: ../plugins/netstatus/netstatus-util.c:152
 msgid "Disconnected"
