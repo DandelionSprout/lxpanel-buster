@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LxPanel\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-29 13:37+0200\n"
-"PO-Revision-Date: 2020-04-29 13:42+0200\n"
+"POT-Creation-Date: 2020-05-06 12:53+0200\n"
+"PO-Revision-Date: 2020-05-11 09:28+0200\n"
 "Last-Translator: Emanuele Goldoni <emanuele.goldoni@gmail.com>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3\n"
 
 #: ../src/configurator.c:148
 msgid ""
@@ -98,13 +98,13 @@ msgid "Desktop panel for LXDE project"
 msgstr "Pannello del desktop per il Progetto LXDE"
 
 #: ../src/panel.c:1532
-#, fuzzy, c-format
+#, c-format
 msgid "%s Settings"
 msgstr "Impostazioni di %s"
 
 #: ../src/panel.c:1553
 msgid "Add / Remove Panel Items"
-msgstr "Aggiungi/Rimuovi elementi pannello"
+msgstr "Aggiungi / Rimuovi elementi del pannello"
 
 #: ../src/panel.c:1561
 #, c-format
@@ -160,7 +160,7 @@ msgid "No file manager is configured."
 msgstr "Nessun gestore di file configurato."
 
 #. { "configure", N_("Preferences"), configure },
-#: ../src/gtk-run.c:385 ../src/main.c:70 ../plugins/menu.c:731
+#: ../src/gtk-run.c:385 ../src/main.c:70 ../plugins/menu.c:733
 msgid "Run"
 msgstr "Esegui"
 
@@ -168,11 +168,11 @@ msgstr "Esegui"
 msgid "Enter the command you want to execute:"
 msgstr "Digitare il comando da eseguire:"
 
-#: ../src/main.c:71 ../plugins/menu.c:732
+#: ../src/main.c:71 ../plugins/menu.c:734
 msgid "Restart"
 msgstr "Riavvia"
 
-#: ../src/main.c:72 ../plugins/menu.c:733
+#: ../src/main.c:72 ../plugins/menu.c:735
 msgid "Logout"
 msgstr "Chiudi sessione"
 
@@ -289,7 +289,7 @@ msgstr "Alloca spazio"
 
 #: ../data/ui/launchtaskbar.glade.h:1 ../plugins/launchtaskbar.c:2507
 msgid "Application Launch and Task Bar"
-msgstr "Avvio applicazioni e Barra dei task"
+msgstr "Barre di avvio applicazioni e delle attività"
 
 #. Launchtaskbar mode: launchbar, taskbar, or combined
 #: ../data/ui/launchtaskbar.glade.h:3
@@ -322,7 +322,8 @@ msgstr "Mostra finestre da tutte le scrivanie"
 
 #: ../data/ui/launchtaskbar.glade.h:10
 msgid "Only show windows on the same monitor as the task bar"
-msgstr "Mostra solo le finestre dello stesso monitor della barra dei task"
+msgstr ""
+"Mostra solo le finestre dello stesso monitor della barra delle attività"
 
 #: ../data/ui/launchtaskbar.glade.h:11
 msgid "Use mouse wheel"
@@ -338,15 +339,16 @@ msgstr "Combina finestre multiple applicazione in un singolo pulsante"
 
 #: ../data/ui/launchtaskbar.glade.h:14
 msgid "Disable enlargement for small task icons"
-msgstr "Disabilita l'ingrandimento delle icone piccole dei task"
+msgstr "Disabilita l'ingrandimento delle icone piccole delle attività"
 
 #: ../data/ui/launchtaskbar.glade.h:15
 msgid "Show task icons smaller than rest of panel icons"
-msgstr "Mostra icone dei task più piccole rispetto alle altre del pannello"
+msgstr ""
+"Mostra icone delle attività più piccole rispetto alle altre del pannello"
 
 #: ../data/ui/launchtaskbar.glade.h:16
 msgid "Maximum width of task button"
-msgstr "Larghezza massima di un pulsante dei task"
+msgstr "Larghezza massima di un pulsante delle attività"
 
 #: ../data/ui/launchtaskbar.glade.h:17
 msgid "Spacing"
@@ -354,7 +356,7 @@ msgstr "Spaziatura"
 
 #: ../data/ui/launchtaskbar.glade.h:18
 msgid "<b>Taskbar</b>"
-msgstr "<b>Barra dei task</b>"
+msgstr "<b>Barra delle attività</b>"
 
 #: ../data/ui/launchtaskbar.glade.h:19
 msgid "Only Application Launch Bar"
@@ -362,11 +364,11 @@ msgstr "Solo barra avvio applicazioni"
 
 #: ../data/ui/launchtaskbar.glade.h:20
 msgid "Only Task Bar (Window List)"
-msgstr "Solo barra dei task (Elenco finestre)"
+msgstr "Solo barra delle attività (elenco finestre)"
 
 #: ../data/ui/launchtaskbar.glade.h:21
 msgid "Integrated Application Launch Bar and Task Bar"
-msgstr "Barra avvio applicazioni e barra dei task integrata"
+msgstr "Barra avvio applicazioni e barra delle attività integrate"
 
 #: ../data/ui/netstatus.glade.h:1
 msgid "<b>Connection</b>"
@@ -463,7 +465,7 @@ msgstr "Pixel"
 #: ../data/ui/panel-pref.glade.h:4
 #, no-c-format
 msgid "% Percent"
-msgstr "% Percento"
+msgstr "% (percentuale)"
 
 # è un'opzione per "Livello registro:"
 #: ../data/ui/panel-pref.glade.h:6
@@ -582,7 +584,7 @@ msgstr "I window manager devono trattare il pannello come dock"
 
 #: ../data/ui/panel-pref.glade.h:41
 msgid "Reserve space, and not covered by maximized windows"
-msgstr "Riserva spazio e non è coperto da finestre massimizzate"
+msgstr "Riserva spazio e non coprirlo con finestre massimizzate"
 
 #: ../data/ui/panel-pref.glade.h:42
 msgid "<b>Properties</b>"
@@ -617,31 +619,28 @@ msgid "Advanced"
 msgstr "Avanzate"
 
 #: ../plugins/cpu/cpu.c:368
-#, fuzzy
 msgid "CPU Usage"
-msgstr "Monitor uso CPU"
+msgstr "Utilizzo CPU"
 
 #: ../plugins/cpu/cpu.c:370
 msgid "Show usage as percentage"
 msgstr "Mostra utilizzo come percentuale"
 
 #: ../plugins/cpu/cpu.c:371
-#, fuzzy
 msgid "Foreground colour"
-msgstr "Colore sfondo"
+msgstr "Colore in primo piano"
 
 #: ../plugins/cpu/cpu.c:372
-#, fuzzy
 msgid "Background colour"
-msgstr "Colore sfondo"
+msgstr "Colore di sfondo"
 
 #: ../plugins/cpu/cpu.c:380
 msgid "CPU Usage Monitor"
-msgstr "Monitor uso CPU"
+msgstr "Monitor utilizzo CPU"
 
 #: ../plugins/cpu/cpu.c:382 ../plugins/monitors/monitors.c:734
 msgid "Display CPU usage"
-msgstr "Mostra uso CPU"
+msgstr "Mostra utilizzo CPU"
 
 #: ../plugins/deskno/deskno.c:210 ../plugins/deskno/deskno.c:230
 msgid "Desktop Number / Workspace Name"
@@ -665,7 +664,7 @@ msgstr "Barra avvio applicazioni"
 
 #: ../plugins/launchtaskbar.c:1838 ../plugins/launchtaskbar.c:2487
 msgid "Task Bar (Window List)"
-msgstr "Barra delle applicazioni (Elenco finestre)"
+msgstr "Barra delle attività (elenco finestre)"
 
 #: ../plugins/launchtaskbar.c:2010
 msgid "A_dd to Launcher"
@@ -688,7 +687,7 @@ msgid ""
 "Taskbar shows all opened windows and allow to iconify them, shade or get "
 "focus"
 msgstr ""
-"La barra delle applicazioni mostra tutte le finestre aperte e permette di "
+"La barra delle attività mostra tutte le finestre aperte e permette di "
 "minimizzarle, arrotolarle o attivarle"
 
 #: ../plugins/launchtaskbar.c:2508
@@ -782,35 +781,38 @@ msgid "Center text"
 msgstr "Testo centrato"
 
 #: ../plugins/dclock.c:562
-#, fuzzy
 msgid "Right align"
-msgstr "PulsanteDestro"
+msgstr "Allinea a destra"
 
 #: ../plugins/dclock.c:575
 msgid "Display digital clock and tooltip"
 msgstr "Mostra orologio digitale e suggerimento"
 
-#: ../plugins/menu.c:362
+#: ../plugins/menu.c:363
 msgid "Add to desktop"
 msgstr "Aggiunge alla scrivania"
 
-#: ../plugins/menu.c:369
+#: ../plugins/menu.c:370
 msgid "Properties"
 msgstr "Proprietà"
 
-#: ../plugins/menu.c:715
+#: ../plugins/menu.c:717
 msgid "Click here to open applications menu"
 msgstr "Clic qui per aprire il menu applicazioni"
 
-#: ../plugins/menu.c:1018 ../plugins/menu.c:1032
+#: ../plugins/menu.c:1025 ../plugins/menu.c:1040
 msgid "Menu"
 msgstr "Menu"
 
-#: ../plugins/menu.c:1019 ../plugins/dirmenu.c:359
+#: ../plugins/menu.c:1026 ../plugins/dirmenu.c:359
 msgid "Icon"
 msgstr "Icona"
 
-#: ../plugins/menu.c:1033
+#: ../plugins/menu.c:1027
+msgid "Padding"
+msgstr "Riempimento"
+
+#: ../plugins/menu.c:1041
 msgid "Application Menu"
 msgstr "Menu applicazioni"
 
@@ -950,7 +952,7 @@ msgstr "Minimizza tutte le finestre"
 
 #: ../plugins/wincmd.c:247
 msgid "Alternately iconify/shade and raise"
-msgstr "Iconificare/arrotolare e rivelare alternativamente"
+msgstr "Iconificare / Arrotolare e rivelare alternativamente"
 
 #: ../plugins/wincmd.c:256
 msgid ""
@@ -1113,7 +1115,7 @@ msgstr "Clic per il cursore del volume"
 
 #: ../plugins/volumealsa/volumealsa.c:1446
 msgid "Click for Toggle Mute"
-msgstr "Clic per attivare/disattivare il volume"
+msgstr "Clic per attivare / disattivare il volume"
 
 #: ../plugins/volumealsa/volumealsa.c:1450
 msgid "Click for Open Mixer"
@@ -1549,7 +1551,7 @@ msgstr "Impossibile analizzare /proc/net/dev. Formato sconosciuto."
 #: ../plugins/netstatus/netstatus-sysdeps.c:332
 #, c-format
 msgid "Could not parse interface name from '%s'"
-msgstr "Impossibile analizzare il nome dell'interfaccia da '%s'"
+msgstr "Impossibile analizzare il nome dell'interfaccia da «%s»"
 
 #: ../plugins/netstatus/netstatus-sysdeps.c:218
 #: ../plugins/netstatus/netstatus-sysdeps.c:647
@@ -1558,7 +1560,7 @@ msgid ""
 "Could not parse interface statistics from '%s'. prx_idx = %d; ptx_idx = %d; "
 "brx_idx = %d; btx_idx = %d;"
 msgstr ""
-"Impossibile analizzare le statistiche dell'interfaccia da \"%s\". prx_idx = "
+"Impossibile analizzare le statistiche dell'interfaccia da «%s». prx_idx = "
 "%d; ptx_idx = %d; brx_idx = %d; btx_idx = %d;"
 
 #: ../plugins/netstatus/netstatus-sysdeps.c:312
@@ -1572,26 +1574,26 @@ msgstr "Impossibile analizzare /proc/net/wireless. Formato sconosciuto."
 #: ../plugins/netstatus/netstatus-sysdeps.c:343
 #, c-format
 msgid "Could not parse wireless details from '%s'. link_idx = %d;"
-msgstr "Impossibile analizzare i dettagli wireless da \"%s\". link_idx = %d;"
+msgstr "Impossibile analizzare i dettagli wireless da «%s». link_idx = %d;"
 
 #: ../plugins/netstatus/netstatus-sysdeps.c:416
 #, c-format
 msgid "Could not connect to interface, '%s'"
-msgstr "Impossibile connettersi all'interfaccia, \"%s\""
+msgstr "Impossibile connettersi all'interfaccia, «%s»"
 
 #: ../plugins/netstatus/netstatus-sysdeps.c:422
 #, c-format
 msgid "Could not send ioctl to interface, '%s'"
-msgstr "Impossibile inviare ioctl all'interfaccia, \"%s\""
+msgstr "Impossibile inviare ioctl all'interfaccia, «%s»"
 
 #: ../plugins/netstatus/netstatus-sysdeps.c:600
 #, c-format
 msgid "Could not parse command line '%s': %s"
-msgstr "Impossibile analizzare la riga di comando \"%s\": %s"
+msgstr "Impossibile analizzare la riga di comando «%s»: %s"
 
 #: ../plugins/netstatus/netstatus-sysdeps.c:637
 msgid "Could not parse 'netstat' output. Unknown format"
-msgstr "Impossibile analizzare l'output di \"netstat\". Formato sconosciuto."
+msgstr "Impossibile analizzare l'output di «netstat». Formato sconosciuto."
 
 #: ../plugins/netstatus/netstatus-util.c:152
 msgid "Disconnected"
@@ -1829,12 +1831,12 @@ msgstr "Aggiunge applet Indicatore al pannello"
 #: ../plugins/monitors/monitors.c:285
 #, c-format
 msgid "CPU usage: %.2f%%"
-msgstr "Uso CPU: %.2f%%"
+msgstr "Utilizzo CPU: %.2f%%"
 
 #: ../plugins/monitors/monitors.c:386
 #, c-format
 msgid "RAM usage: %.1fMB (%.2f%%)"
-msgstr "Uso RAM: %.1fMB (%.2f%%)"
+msgstr "Utilizzo RAM: %.1fMB (%.2f%%)"
 
 #: ../plugins/monitors/monitors.c:732 ../plugins/monitors/monitors.c:821
 msgid "Resource monitors"
@@ -1846,7 +1848,7 @@ msgstr "Colore CPU"
 
 #: ../plugins/monitors/monitors.c:736
 msgid "Display RAM usage"
-msgstr "Mostra uso RAM"
+msgstr "Mostra utilizzo RAM"
 
 #: ../plugins/monitors/monitors.c:737
 msgid "RAM color"
@@ -1862,7 +1864,7 @@ msgstr "Mostra monitoraggi (CPU, RAM)"
 
 #: ../plugins/weather/weatherwidget.c:52
 msgid "[N/A]"
-msgstr "[N/D]"
+msgstr "[N.D.]"
 
 #: ../plugins/weather/weatherwidget.c:806
 msgid "Enter New Location"
@@ -1939,12 +1941,10 @@ msgid "Units:"
 msgstr "Unità:"
 
 #: ../plugins/weather/weatherwidget.c:1306
-#, fuzzy
 msgid "_Metric (°C)"
 msgstr "_Metriche (°C)"
 
 #: ../plugins/weather/weatherwidget.c:1308
-#, fuzzy
 msgid "_English (°F)"
 msgstr "Imp_eriali (°F)"
 
