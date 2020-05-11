@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: LxPanel\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-06 12:53+0200\n"
-"PO-Revision-Date: 2020-05-10 23:46+0200\n"
+"PO-Revision-Date: 2020-05-11 09:28+0200\n"
 "Last-Translator: Emanuele Goldoni <emanuele.goldoni@gmail.com>\n"
 "Language-Team: Italian\n"
 "Language: it\n"
@@ -289,7 +289,7 @@ msgstr "Alloca spazio"
 
 #: ../data/ui/launchtaskbar.glade.h:1 ../plugins/launchtaskbar.c:2507
 msgid "Application Launch and Task Bar"
-msgstr "Avvio applicazioni e Barra dei task"
+msgstr "Barre di avvio applicazioni e delle attività"
 
 #. Launchtaskbar mode: launchbar, taskbar, or combined
 #: ../data/ui/launchtaskbar.glade.h:3
@@ -322,7 +322,8 @@ msgstr "Mostra finestre da tutte le scrivanie"
 
 #: ../data/ui/launchtaskbar.glade.h:10
 msgid "Only show windows on the same monitor as the task bar"
-msgstr "Mostra solo le finestre dello stesso monitor della barra dei task"
+msgstr ""
+"Mostra solo le finestre dello stesso monitor della barra delle attività"
 
 #: ../data/ui/launchtaskbar.glade.h:11
 msgid "Use mouse wheel"
@@ -338,15 +339,16 @@ msgstr "Combina finestre multiple applicazione in un singolo pulsante"
 
 #: ../data/ui/launchtaskbar.glade.h:14
 msgid "Disable enlargement for small task icons"
-msgstr "Disabilita l'ingrandimento delle icone piccole dei task"
+msgstr "Disabilita l'ingrandimento delle icone piccole delle attività"
 
 #: ../data/ui/launchtaskbar.glade.h:15
 msgid "Show task icons smaller than rest of panel icons"
-msgstr "Mostra icone dei task più piccole rispetto alle altre del pannello"
+msgstr ""
+"Mostra icone delle attività più piccole rispetto alle altre del pannello"
 
 #: ../data/ui/launchtaskbar.glade.h:16
 msgid "Maximum width of task button"
-msgstr "Larghezza massima di un pulsante dei task"
+msgstr "Larghezza massima di un pulsante delle attività"
 
 #: ../data/ui/launchtaskbar.glade.h:17
 msgid "Spacing"
@@ -354,7 +356,7 @@ msgstr "Spaziatura"
 
 #: ../data/ui/launchtaskbar.glade.h:18
 msgid "<b>Taskbar</b>"
-msgstr "<b>Barra dei task</b>"
+msgstr "<b>Barra delle attività</b>"
 
 #: ../data/ui/launchtaskbar.glade.h:19
 msgid "Only Application Launch Bar"
@@ -362,11 +364,11 @@ msgstr "Solo barra avvio applicazioni"
 
 #: ../data/ui/launchtaskbar.glade.h:20
 msgid "Only Task Bar (Window List)"
-msgstr "Solo barra dei task (elenco finestre)"
+msgstr "Solo barra delle attività (elenco finestre)"
 
 #: ../data/ui/launchtaskbar.glade.h:21
 msgid "Integrated Application Launch Bar and Task Bar"
-msgstr "Barra avvio applicazioni e barra dei task integrata"
+msgstr "Barra avvio applicazioni e barra delle attività integrate"
 
 #: ../data/ui/netstatus.glade.h:1
 msgid "<b>Connection</b>"
@@ -662,7 +664,7 @@ msgstr "Barra avvio applicazioni"
 
 #: ../plugins/launchtaskbar.c:1838 ../plugins/launchtaskbar.c:2487
 msgid "Task Bar (Window List)"
-msgstr "Barra dei task (elenco finestre)"
+msgstr "Barra delle attività (elenco finestre)"
 
 #: ../plugins/launchtaskbar.c:2010
 msgid "A_dd to Launcher"
@@ -685,7 +687,7 @@ msgid ""
 "Taskbar shows all opened windows and allow to iconify them, shade or get "
 "focus"
 msgstr ""
-"La barra dei task mostra tutte le finestre aperte e permette di "
+"La barra delle attività mostra tutte le finestre aperte e permette di "
 "minimizzarle, arrotolarle o attivarle"
 
 #: ../plugins/launchtaskbar.c:2508
