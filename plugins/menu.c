@@ -1023,7 +1023,7 @@ static GtkWidget *menu_config(LXPanel *panel, GtkWidget *p)
 {
     menup* menu = lxpanel_plugin_get_data(p);
     return lxpanel_generic_config_dlg(_("Menu"), panel, apply_config, p,
-                                      _("Icon"), &menu->fname, CONF_TYPE_FILE_ENTRY,
+                                      _("Icon"), &menu->fname, CONF_TYPE_STR,
                                       _("Padding"), &menu->padding, CONF_TYPE_INT,
                                       /* _("Use panel size as icon size"), &menu->match_panel, CONF_TYPE_INT, */
                                       /* _("Caption"), &menu->caption, CONF_TYPE_STR, */
