@@ -950,6 +950,13 @@ menu_constructor(LXPanel *panel, config_setting_t *settings)
     config_setting_t *s;
     int iw, ih;
 
+#ifdef ENABLE_NLS
+    setlocale (LC_ALL, "");
+    bindtextdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
+    bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+    textdomain (GETTEXT_PACKAGE);
+#endif
+
     m = g_new0(menup, 1);
     g_return_val_if_fail(m != NULL, 0);
 
@@ -1033,6 +1040,13 @@ static GtkWidget *menu_config(LXPanel *panel, GtkWidget *p)
 /* Callback when panel configuration changes. */
 static void menu_panel_configuration_changed(LXPanel *panel, GtkWidget *p)
 {
+#ifdef ENABLE_NLS
+    setlocale (LC_ALL, "");
+    bindtextdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
+    bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+    textdomain (GETTEXT_PACKAGE);
+#endif
+
     apply_config(p);
 }
 
@@ -1044,7 +1058,8 @@ LXPanelPluginInit lxpanel_static_plugin_menu = {
     .config = menu_config,
     .reconfigure = menu_panel_configuration_changed,
     .button_press_event = menu_button_press_event,
-    .show_system_menu = show_system_menu
+    .show_system_menu = show_system_menu,
+    .gettext_package = GETTEXT_PACKAGE
 };
 
 /* vim: set sw=4 et sts=4 : */

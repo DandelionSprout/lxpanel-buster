@@ -154,7 +154,7 @@ msgstr ""
 #. { "configure", N_("Preferences"), configure },
 #: ../src/gtk-run.c:385 ../src/main.c:70 ../plugins/menu.c:731
 msgid "Run"
-msgstr "Run"
+msgstr "Run..."
 
 #: ../src/gtk-run.c:399
 msgid "Enter the command you want to execute:"
@@ -166,7 +166,7 @@ msgstr "Restart"
 
 #: ../src/main.c:72 ../plugins/menu.c:733
 msgid "Logout"
-msgstr "Logout"
+msgstr "Shutdown..."
 
 #: ../src/main.c:505
 #, c-format
