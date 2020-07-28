@@ -148,6 +148,7 @@ static void redraw_pixmap(CPUPlugin * c)
     /* Redraw pixmap. */
     GdkPixbuf *pixbuf = gdk_pixbuf_new_from_data (cairo_image_surface_get_data (c->pixmap), GDK_COLORSPACE_RGB, TRUE, 8, c->pixmap_width, c->pixmap_height, c->pixmap_width *4, NULL, NULL);
     gtk_image_set_from_pixbuf (GTK_IMAGE (c->da), pixbuf);
+    g_object_unref (pixbuf);
 }
 
 /* Periodic timer callback. */
